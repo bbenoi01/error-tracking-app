@@ -24,7 +24,7 @@
     "errors": {
       "type": "hasMany",
       "model": "error",
-      "foreignKey": "employeeId"
+      "foreignKey": ""
     }
   },
   "acls": [],
