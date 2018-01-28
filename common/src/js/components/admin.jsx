@@ -1,0 +1,102 @@
+import React, { Component } from 'react';
+import Navbar from '../index/navbarIndex';
+import {
+    addEmployeeToggle,
+    updateEmployeeId,
+    updateFirstName,
+    updateLastName,
+    addEmployee,
+} from '../actions/adminActions';
+
+export default class Admin extends Component {
+    constructor(props) {
+        super(props);
+
+        this.handleAddEmployeeToggle = this.handleAddEmployeeToggle.bind(this);
+        this.handleEmployeeIdInput = this.handleEmployeeIdInput.bind(this);
+        this.handleFirstNameInput = this.handleFirstNameInput.bind(this);
+        this.handleLastNameInput = this.handleLastNameInput.bind(this);
+        this.handleClick = this.handleClick.bind(this);
+
+    }
+
+    handleAddEmployeeToggle(e) {
+        const { dispatch } = this.props;
+        const { value } = e.target;
+        dispatch(addEmployeeToggle(value));
+    }
+
+    handleEmployeeIdInput(e) {
+        const { dispatch } = this.props;
+        const { value } = e.target;
+        dispatch(updateEmployeeId(value));
+    }
+
+    handleFirstNameInput(e) {
+        const { dispatch } = this.props;
+        const { value } = e.target;
+        dispatch(updateFirstName(value));
+    }
+
+    handleLastNameInput(e) {
+        const { dispatch } = this.props;
+        const { value } = e.target;
+        dispatch(updateLastName(value));
+    }
+
+    handleClick(e) {
+        e.preventDefault();
+        const { dispatch, employeeType, employeeId, firstName, lastName } = this.props;
+        dispatch(addEmployee(employeeType, employeeId, firstName, lastName))
+    }
+
+    render() {
+        const { employeeType, employeeId, firstName, lastName } = this.props;
+        return (
+            <div>
+                <Navbar />
+                <div className="container valign-wrapper" id='full-page'>
+                    <div className="container">
+                        <div className="row">
+                            <div className="card col s6 offset-s3 ">
+                                <div className="card-content">
+                                    <span className="card-title center"><b>Add Employee</b></span>
+                                    <hr/>
+                                    <br/>
+                                    <form onSubmit={this.handleClick}>
+                                        <div className="container">
+                                            <div className="col s12">
+                                                <select name="employee-type" id="employee-type" className="browser-default" value={employeeType} onChange={this.handleAddEmployeeToggle}>
+                                                    <option value="" selected disabled>Choose your option</option>
+                                                    <option value="Manager">Manager</option>
+                                                    <option value="Rep">Rep</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <br/>
+                                        <br/>
+                                        <div className="input-field">
+                                            <input type="text" name='employeeId' id='employeeId' value={employeeId} onChange={this.handleEmployeeIdInput}  />
+                                            <label htmlFor="employeeId">Employee Id</label>
+                                        </div>
+                                        <div className="input-field">
+                                            <input type="text" name='firstName' id='firstName' value={firstName} onChange={this.handleFirstNameInput} />
+                                            <label htmlFor="firstName">First Name</label>
+                                        </div>
+                                        <div className="input-field">
+                                            <input type="text" name='lastName' id='lastName'value={lastName} onChange={this.handleLastNameInput} />
+                                            <label htmlFor="lastName">Last Name</label>
+                                        </div>
+                                        <div className="card-action center">
+                                            <button className="btn red" type='submit'>Submit</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        );
+    }
+}

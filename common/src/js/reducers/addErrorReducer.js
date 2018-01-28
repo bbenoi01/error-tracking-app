@@ -2,6 +2,7 @@ import { types } from '../actions/addErrorActions';
 
 const INITIAL_STATE = {
     errorType: ''
+
 };
 
 export default function AddErrorReducer(state = INITIAL_STATE, action) {
