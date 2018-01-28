@@ -6,7 +6,7 @@
     "node": ">=4"
   },
   "scripts": {
-    "build": "npm run less && webpack",
+    "build": "npm run less && webpack -w",
     "less": "lessc common/src/css/style.less dist/css/style.css",
     "lint": "eslint .",
     "start": "node .",
