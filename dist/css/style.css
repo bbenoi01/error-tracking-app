@@ -11,11 +11,9 @@ body,
   display: flex;
   flex-direction: column;
 }
-nav,
-.btn {
+nav {
   background-color: #d52b1e;
 }
 #full-page {
   min-height: 90vh;
-  max-width: 100vx;
 }

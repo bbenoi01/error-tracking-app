@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
-import Navbar from './index/navbarIndex';
+import { HashRouter as Router, Route } from 'react-router-dom';
 import AddError from './index/addErrorIndex';
+import Admin from './index/adminIndex';
 
 export default class App extends Component {
     render() {
         return (
-            <div>
-                <Navbar />
-                <div className="container valign-wrapper" id='full-page'>
-                    <AddError />
+            <Router>
+                <div>
+                    <Route exact path='/' component={AddError}/>
+                    <Route exact path='/admin' component={Admin}/>
                 </div>
-            </div>
+            </Router>
         );
     }
 }
