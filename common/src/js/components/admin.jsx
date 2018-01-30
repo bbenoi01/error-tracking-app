@@ -47,7 +47,8 @@ export default class Admin extends Component {
     handleClick(e) {
         e.preventDefault();
         const { dispatch, employeeType, employeeId, firstName, lastName } = this.props;
-        dispatch(addEmployee(employeeType, employeeId, firstName, lastName))
+        dispatch(addEmployee(employeeType, employeeId, firstName, lastName));
+        document.getElementById('admin-form').reset();
     }
 
     render() {
@@ -58,15 +59,15 @@ export default class Admin extends Component {
                 <div className="container valign-wrapper" id='full-page'>
                     <div className="container">
                         <div className="row">
-                            <div className="card col s6 offset-s3 ">
+                            <div className="col s6 offset-s3 card">
                                 <div className="card-content">
                                     <span className="card-title center"><b>Add Employee</b></span>
                                     <hr/>
                                     <br/>
-                                    <form onSubmit={this.handleClick}>
+                                    <form onSubmit={this.handleClick} id="admin-form">
                                         <div className="container">
                                             <div className="col s12">
-                                                <select name="employee-type" id="employee-type" className="browser-default" value={employeeType} onChange={this.handleAddEmployeeToggle}>
+                                                <select name="employee-type" id="employee-type" className="browser-default" onChange={this.handleAddEmployeeToggle}>
                                                     <option value="" selected disabled>Choose your option</option>
                                                     <option value="Manager">Manager</option>
                                                     <option value="Rep">Rep</option>
@@ -76,21 +77,33 @@ export default class Admin extends Component {
                                         <br/>
                                         <br/>
                                         <div className="input-field">
-                                            <input type="text" name='employeeId' id='employeeId' value={employeeId} onChange={this.handleEmployeeIdInput}  />
+                                            <input type="text" name='employeeId' id='employeeId' onChange={this.handleEmployeeIdInput}  />
                                             <label htmlFor="employeeId">Employee Id</label>
                                         </div>
                                         <div className="input-field">
-                                            <input type="text" name='firstName' id='firstName' value={firstName} onChange={this.handleFirstNameInput} />
+                                            <input type="text" name='firstName' id='firstName' onChange={this.handleFirstNameInput} />
                                             <label htmlFor="firstName">First Name</label>
                                         </div>
                                         <div className="input-field">
-                                            <input type="text" name='lastName' id='lastName'value={lastName} onChange={this.handleLastNameInput} />
+                                            <input type="text" name='lastName' id='lastName' onChange={this.handleLastNameInput} />
                                             <label htmlFor="lastName">Last Name</label>
                                         </div>
                                         <div className="card-action center">
                                             <button className="btn red" type='submit'>Submit</button>
                                         </div>
                                     </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="row center">
+                            <div className="col s5 offset-s1 card">
+                                <div className="card-content">
+                                    <span className="card-title center"><b>Add Employee</b></span>
+                                </div>
+                            </div>
+                            <div className="col s5 offset-s1 card">
+                                <div className="card-content">
+                                    <span className="card-title center"><b>Add Employee</b></span>
                                 </div>
                             </div>
                         </div>

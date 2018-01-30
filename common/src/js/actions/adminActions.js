@@ -44,14 +44,14 @@ export function addEmployee(employeeType, employeeId, firstName, lastName) {
             dispatch({
                 type: types.ADD_MANAGER,
                 payload: axios.post('http://localhost:3000/api/managers', { employeeId, firstName, lastName })
-                .then(results => {return results.data})
+                .then(results => {return results.data; alert('Add Successful')})
                 .catch(err => console.log(err))
             })
         } else if (employeeType == 'Rep') {
             dispatch({
                 type: types.ADD_REP,
                 payload: axios.post('http://localhost:3000/api/reps', { employeeId, firstName, lastName })
-                .then(results => {return results.data})
+                .then(results => {return results.data; alert('Add Successful')})
                 .catch(err => console.log(err))
             })
         }        
