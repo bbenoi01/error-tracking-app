@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+import {Input} from 'react-materialize';
 import Navbar from '../index/navbarIndex';
 import {
     errorToggle,
@@ -105,11 +105,10 @@ export default class AddError extends Component {
                                     <div className="card-content">
                                         <span className="card-title center"><b>Device Return</b></span>
                                         <hr/>
-                                        <br/>
                                         <form key="device" onSubmit={this.handleClick}>
                                             <div className="container">
-                                                <div className="col s12">
-                                                    <select className="browser-default" onChange={this.handleIssueToggle} required>
+                                                <div className="input-field">
+                                                    <Input s={12} type='select' onChange={this.handleIssueToggle} required>
                                                         <option value="" disabled selected>Choose issue</option>
                                                         <option value="Missing">Missing</option>
                                                         <option value="Damaged">Damaged</option>
@@ -119,27 +118,27 @@ export default class AddError extends Component {
                                                         <option value="Missing REDD Form">Missing REDD Form</option>
                                                         <option value="Missing Status">Missing Status</option>
                                                         <option value="Device Not Reset">Device Not Reset</option>
-                                                    </select>
+                                                    </Input>
                                                     <br/>
                                                 </div>
-                                                <div className="col s12">
-                                                    <select className="browser-default" onChange={this.handleRepToggle} required>
+                                                <div className="input-field">
+                                                    <Input s={12} type='select' onChange={this.handleRepToggle} required>
                                                         <option value="" disabled selected>Rep</option>
                                                         <option value="Tom Jones">Tom Jones</option>
                                                         <option value="Marcus Thomas">Marcus Thomas</option>
                                                         <option value="Jeff Sinclair">Jeff Sinclair</option>
                                                         <option value="R. Kelley">R. Kelley</option>
-                                                    </select>
+                                                    </Input>
                                                     <br/>
                                                 </div>
-                                                <div className="col s12">
-                                                    <select className="browser-default" onChange={this.handleManagerToggle} >
+                                                <div className="input-field">
+                                                    <Input s={12} type='select' onChange={this.handleManagerToggle} >
                                                         <option value="" disabled selected>Approving Manager</option>
                                                         <option value="Tom Jones">Tom Jones</option>
                                                         <option value="Marcus Thomas">Marcus Thomas</option>
                                                         <option value="Jeff Sinclair">Jeff Sinclair</option>
                                                         <option value="R. Kelley">R. Kelley</option>                                                        
-                                                    </select>
+                                                    </Input>
                                                     <br/>
                                                 </div>
                                             </div>
@@ -182,28 +181,27 @@ export default class AddError extends Component {
                                     <div className="card-content">
                                         <span className="card-title center"><b>Accessory Return</b></span>
                                         <hr/>
-                                        <br/>
                                         <form key="accessory" onSubmit={this.handleClick}>
                                             <div className="container">
-                                                <div className="col s12">
-                                                    <select className="browser-default" onChange={this.handleIssueToggle} required>
+                                                <div className="input-field">
+                                                    <Input s={12} type='select' onChange={this.handleIssueToggle} required>
                                                         <option value="" disabled selected>Choose issue</option>
                                                         <option value="Missing">Missing</option>
                                                         <option value="Damaged">Damaged</option>
                                                         <option value="Incorrect Item">Incorrect Item</option>
                                                         <option value="Missing Return Receipt">Missing Return Receipt</option>
                                                         <option value="Missing Status">Missing Status</option>
-                                                    </select>
+                                                    </Input>
                                                     <br/>
                                                 </div>
-                                                <div className="col s12">
-                                                    <select className="browser-default" onChange={this.handleRepToggle} required>
+                                                <div className="input-field">
+                                                    <Input s={12} type='select' onChange={this.handleRepToggle} required>
                                                         <option value="" disabled selected>Rep</option>
                                                         <option value="Tom Jones">Tom Jones</option>
                                                         <option value="Marcus Thomas">Marcus Thomas</option>
                                                         <option value="Jeff Sinclair">Jeff Sinclair</option>
                                                         <option value="R. Kelley">R. Kelley</option>
-                                                    </select>
+                                                    </Input>
                                                     <br/>
                                                 </div>
                                             </div>
@@ -246,26 +244,25 @@ export default class AddError extends Component {
                                     <div className="card-content">
                                         <span className="card-title center"><b>Missing Signature</b></span>
                                         <hr/>
-                                        <br/>
                                         <form key="signature" onSubmit={this.handleClick}>
                                             <div className="container">
-                                                <div className="col s12">
-                                                    <select className="browser-default" onChange={this.handleIssueToggle} required>
+                                                <div className="input-field">
+                                                    <Input s={12} type='select' onChange={this.handleIssueToggle} required>
                                                         <option value="" disabled selected>Choose issue</option>
                                                         <option value="DP">DP</option>
                                                         <option value="Activation">Activation</option>
                                                         <option value="Upgrade">Upgrade</option>
-                                                    </select>
+                                                    </Input>
                                                     <br/>
                                                 </div>
-                                                <div className="col s12">
-                                                    <select className="browser-default" onChange={this.handleRepToggle} required>
+                                                <div className="input-field">
+                                                    <Input s={12} type='select' onChange={this.handleRepToggle} required>
                                                         <option value="" disabled selected>Rep</option>
                                                         <option value="Tom Jones">Tom Jones</option>
                                                         <option value="Marcus Thomas">Marcus Thomas</option>
                                                         <option value="Jeff Sinclair">Jeff Sinclair</option>
                                                         <option value="R. Kelley">R. Kelley</option>
-                                                    </select>
+                                                    </Input>
                                                     <br/>
                                                 </div>
                                             </div>
@@ -308,27 +305,26 @@ export default class AddError extends Component {
                                     <div className="card-content">
                                         <span className="card-title center"><b>Trade-In</b></span>
                                         <hr/>
-                                        <br/>
                                         <form key="trade" onSubmit={this.handleClick}>
                                             <div className="container">
-                                                <div className="col s12">
-                                                    <select className="browser-default" onChange={this.handleIssueToggle} required>
+                                                <div className="input-field">
+                                                    <Input s={12} type='select' onChange={this.handleIssueToggle} required>
                                                         <option value="" disabled selected>Choose issue</option>
                                                         <option value="Missing">Missing</option>
                                                         <option value="Device Not Reset">Device Not Reset</option>
                                                         <option value="Incorrect Device">Incorrect Device</option>
                                                         <option value="Missing Trade Receipt">Missing Trade Receipt</option>
-                                                    </select>
+                                                    </Input>
                                                     <br/>
                                                 </div>
-                                                <div className="col s12">
-                                                    <select className="browser-default" onChange={this.handleRepToggle} required>
+                                                <div className="input-field">
+                                                    <Input s={12} type='select' onChange={this.handleRepToggle} required>
                                                         <option value="" disabled selected>Rep</option>
                                                         <option value="Tom Jones">Tom Jones</option>
                                                         <option value="Marcus Thomas">Marcus Thomas</option>
                                                         <option value="Jeff Sinclair">Jeff Sinclair</option>
                                                         <option value="R. Kelley">R. Kelley</option>
-                                                    </select>
+                                                    </Input>
                                                     <br/>
                                                 </div>
                                             </div>
@@ -371,17 +367,16 @@ export default class AddError extends Component {
                                     <div className="card-content">
                                         <span className="card-title center"><b>Add Error</b></span>
                                         <hr/>
-                                        <br/>
                                         <form key="add">
                                             <div className="container">
-                                                <div className="col s12">
-                                                    <select className='browser-default' onChange={this.handleErrorToggle}>
+                                                <div className="input-field">
+                                                    <Input s={12} type='select' onChange={this.handleErrorToggle}>
                                                         <option value="" selected disabled>Choose your option</option>
                                                         <option value="Device Return">Device Return</option>
                                                         <option value="Accessory Return">Accessory Return</option>
                                                         <option value="Missing Signature">Missing Signature</option>
                                                         <option value="Trade-In">Trade-In</option>
-                                                    </select>
+                                                    </Input>
                                                 </div>
                                             </div>
                                         </form>
