@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Navbar from '../index/navbarIndex';
+import {Input} from 'react-materialize';
 import {
     addEmployeeToggle,
     updateEmployeeId,
@@ -63,28 +64,27 @@ export default class Admin extends Component {
                                 <div className="card-content">
                                     <span className="card-title center"><b>Add Employee</b></span>
                                     <hr/>
-                                    <br/>
                                     <form onSubmit={this.handleClick} id="admin-form">
                                         <div className="container">
-                                            <div className="col s12">
-                                                <select name="employee-type" id="employee-type" className="browser-default" onChange={this.handleAddEmployeeToggle}>
+                                            <div className="input-field">
+                                                <Input s={12} type='select' name="employee-type" id="employee-type" onChange={this.handleAddEmployeeToggle}>
                                                     <option value="" selected disabled>Choose your option</option>
                                                     <option value="Manager">Manager</option>
                                                     <option value="Rep">Rep</option>
-                                                </select>
+                                                </Input>
+                                                <br/>
                                             </div>
                                         </div>
                                         <br/>
-                                        <br/>
-                                        <div className="input-field">
+                                        <div>
                                             <input type="text" name='employeeId' id='employeeId' onChange={this.handleEmployeeIdInput}  />
                                             <label htmlFor="employeeId">Employee Id</label>
                                         </div>
-                                        <div className="input-field">
+                                        <div>
                                             <input type="text" name='firstName' id='firstName' onChange={this.handleFirstNameInput} />
                                             <label htmlFor="firstName">First Name</label>
                                         </div>
-                                        <div className="input-field">
+                                        <div>
                                             <input type="text" name='lastName' id='lastName' onChange={this.handleLastNameInput} />
                                             <label htmlFor="lastName">Last Name</label>
                                         </div>
