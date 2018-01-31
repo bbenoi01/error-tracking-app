@@ -1,0 +1,46 @@
+{
+    "name": "error",
+    "base": "PersistedModel",
+    "idInjection": true,
+    "options": {
+      "validateUpsert": true
+    },
+    "properties": {
+      "errorType": {
+        "type": "string",
+        "required": true
+      },
+      "transactionDate": {
+        "type": "string",
+        "required": true
+      },
+      "orderNumber": {
+        "type": "string",
+        "required": true
+      },
+      "employeeName": {
+        "type": "string",
+        "required": true
+      },
+      "issue": {
+        "type": "string",
+        "required": true
+      },
+      "sku": {
+        "type": "string"
+      },
+      "approvingManager": {
+        "type": "string"
+      },
+      "installmentAgreement": {
+        "type": "string"
+      },
+      "notes": {
+        "type": "string"
+      }
+    },
+    "validations": [],
+    "relations": {},
+    "acls": [],
+    "methods": {}
+  }
