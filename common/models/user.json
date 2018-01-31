@@ -1,0 +1,43 @@
+{
+    "name": "user",
+    "base": "PersistedModel",
+    "plural": "users",
+    "idInjection": true,
+    "options": {
+        "validateUpsert": true
+    },
+    "properties": {
+        "manager": {
+            "type": "boolean",
+            "required": true,
+            "default": false
+        },
+        "rep": {
+            "type": "boolean",
+            "required": true,
+            "default": false
+        },
+        "employeeId": {
+            "type": "string",
+            "required": true
+        },
+        "firstName": {
+            "type": "string",
+            "required": true
+        },
+        "lastName": {
+            "type": "string",
+            "required": true
+        }
+    },
+    "validations": [],
+    "relations": {
+        "errors": {
+            "type": "hasMany",
+            "model": "error",
+            "foreignKey": ""
+        }
+    },
+    "acls": [],
+    "methods": {}
+}
