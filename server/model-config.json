@@ -13,8 +13,9 @@
       "./mixins"
     ]
   },
-  "User": {
-    "dataSource": "db"
+  "user": {
+    "dataSource": "MongoDB",
+    "public": true
   },
   "AccessToken": {
     "dataSource": "db",
@@ -34,14 +35,6 @@
   "Role": {
     "dataSource": "db",
     "public": false
-  },
-  "rep": {
-    "dataSource": "MongoDB",
-    "public": true
-  },
-  "manager": {
-    "dataSource": "MongoDB",
-    "public": true
   },
   "error": {
     "dataSource": "MongoDB",

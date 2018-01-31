@@ -1,6 +1,6 @@
 {
     "name": "user",
-    "base": "PersistedModel",
+    "base": "User",
     "plural": "users",
     "idInjection": true,
     "options": {
@@ -28,7 +28,12 @@
         "lastName": {
             "type": "string",
             "required": true
+        },
+        "email": {
+            "type": "string",
+            "required": false
         }
+        
     },
     "validations": [],
     "relations": {
