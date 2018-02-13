@@ -1,21 +1,15 @@
 {
     "name": "user",
-    "base": "User",
+    "base": "PersistedModel",
     "plural": "users",
     "idInjection": true,
     "options": {
         "validateUpsert": true
     },
     "properties": {
-        "manager": {
-            "type": "boolean",
-            "required": true,
-            "default": false
-        },
-        "rep": {
-            "type": "boolean",
-            "required": true,
-            "default": false
+        "role": {
+            "type": "string",
+            "required": true
         },
         "employeeId": {
             "type": "string",
@@ -28,10 +22,6 @@
         "lastName": {
             "type": "string",
             "required": true
-        },
-        "email": {
-            "type": "string",
-            "required": false
         }
         
     },

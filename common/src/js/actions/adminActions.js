@@ -1,17 +1,30 @@
 import axios from 'axios';
 
 export const types = {
-    ADD_EMPLOYEE_TOGGLE: 'ADD_EMPLOYEE_TOGGLE',
-    ADD_MANAGER: 'ADD_MANAGER',
-    ADD_REP: 'ADD_REP',
+    ALL_USERS: 'ALL_USERS',
+    EMPLOYEE_ROLE_TOGGLE: 'EMPLOYEE_ROLE_TOGGLE',
+    NEW_EMPLOYEE: 'NEW_MANAGER',
     UPDATE_EMPLOYEE_ID: 'UPDATE_EMPLOYEE_ID',
     UPDATE_FIRST_NAME: 'UPDATE_FIRST_NAME',
     UPDATE_LAST_NAME: 'UPDATE_LAST_NAME'
 }
 
-export function addEmployeeToggle(value) {
+export function findUsers() {
+    return (dispatch) => {
+        axios.get('http://localhost:3000/api/users')
+        .then(res => {
+            dispatch({
+                type: types.ALL_USERS,
+                payload: res.data
+            })      
+        })
+        .catch(err => console.log(err))    
+    };
+}
+
+export function employeeRoleToggle(value) {
     return {
-        type: types.ADD_EMPLOYEE_TOGGLE,
+        type: types.EMPLOYEE_ROLE_TOGGLE,
         payload: value
     };
 }
@@ -37,25 +50,31 @@ export function updateLastName(value) {
     }
 }
 
-export function addEmployee(employeeType, employeeId, firstName, lastName) {
-    console.log({employeeType, employeeId, firstName, lastName});
+export function addEmployee(role, employeeId, firstName, lastName) {
+    console.log({role, employeeId, firstName, lastName});
     return (dispatch) => {
-        if (employeeType == 'Manager') {
+        axios.post('http://localhost:3000/api/users', { role, employeeId, firstName, lastName });
+        axios.get('http://localhost:3000/api/users')
+        .then(res => {
             dispatch({
-                type: types.ADD_MANAGER,
-                payload: axios.post('http://localhost:3000/api/managers', { employeeId, firstName, lastName })
-                .then(results => {return results.data; alert('Add Successful')})
-                .catch(err => console.log(err))
-            })
-        } else if (employeeType == 'Rep') {
-            dispatch({
-                type: types.ADD_REP,
-                payload: axios.post('http://localhost:3000/api/reps', { employeeId, firstName, lastName })
-                .then(results => {return results.data; alert('Add Successful')})
-                .catch(err => console.log(err))
-            })
-        }        
+                type: types.ALL_USERS,
+                payload: res.data
+            })      
+        })
+        .catch(err => console.log(err))     
     }
 }
 
-
+export function removeEmployee(id) {
+    return (dispatch) => {
+        axios.delete(`http://localhost:3000/api/users/${id}`);
+        axios.get('http://localhost:3000/api/users')
+        .then(res => {
+            dispatch({
+                type: types.ALL_USERS,
+                payload: res.data
+            })      
+        })
+        .catch(err => console.log(err))
+    }
+}

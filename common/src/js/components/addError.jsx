@@ -92,7 +92,7 @@ export default class AddError extends Component {
     }
 
     render() {
-        const { errorType } = this.props;
+        const { errorType, users } = this.props;
 
          if (errorType == 'Device Return') {
             return (
@@ -107,40 +107,32 @@ export default class AddError extends Component {
                                         <hr/>
                                         <form key="device" onSubmit={this.handleClick}>
                                             <div className="container">
-                                                <div className="input-field">
-                                                    <Input s={12} type='select' onChange={this.handleIssueToggle} required>
-                                                        <option value="" disabled selected>Choose issue</option>
-                                                        <option value="Missing">Missing</option>
-                                                        <option value="Damaged">Damaged</option>
-                                                        <option value="Incorrect Item">Incorrect Item</option>
-                                                        <option value="Missing Original Receipt">Missing Original Receipt</option>
-                                                        <option value="Missing Return Receipt">Missing Return Receipt</option>
-                                                        <option value="Missing REDD Form">Missing REDD Form</option>
-                                                        <option value="Missing Status">Missing Status</option>
-                                                        <option value="Device Not Reset">Device Not Reset</option>
-                                                    </Input>
-                                                    <br/>
-                                                </div>
-                                                <div className="input-field">
-                                                    <Input s={12} type='select' onChange={this.handleRepToggle} required>
-                                                        <option value="" disabled selected>Rep</option>
-                                                        <option value="Tom Jones">Tom Jones</option>
-                                                        <option value="Marcus Thomas">Marcus Thomas</option>
-                                                        <option value="Jeff Sinclair">Jeff Sinclair</option>
-                                                        <option value="R. Kelley">R. Kelley</option>
-                                                    </Input>
-                                                    <br/>
-                                                </div>
-                                                <div className="input-field">
-                                                    <Input s={12} type='select' onChange={this.handleManagerToggle} >
-                                                        <option value="" disabled selected>Approving Manager</option>
-                                                        <option value="Tom Jones">Tom Jones</option>
-                                                        <option value="Marcus Thomas">Marcus Thomas</option>
-                                                        <option value="Jeff Sinclair">Jeff Sinclair</option>
-                                                        <option value="R. Kelley">R. Kelley</option>                                                        
-                                                    </Input>
-                                                    <br/>
-                                                </div>
+                                                <Input s={12} type='select' onChange={this.handleIssueToggle} required>
+                                                    <option value="" disabled selected>Choose issue</option>
+                                                    <option value="Missing">Missing</option>
+                                                    <option value="Damaged">Damaged</option>
+                                                    <option value="Incorrect Item">Incorrect Item</option>
+                                                    <option value="Missing Original Receipt">Missing Original Receipt</option>
+                                                    <option value="Missing Return Receipt">Missing Return Receipt</option>
+                                                    <option value="Missing REDD Form">Missing REDD Form</option>
+                                                    <option value="Missing Status">Missing Status</option>
+                                                    <option value="Device Not Reset">Device Not Reset</option>
+                                                </Input>
+                                                <br/>
+                                                <Input s={12} type='select' onChange={this.handleRepToggle} required>
+                                                    <option value="" disabled selected>Rep</option>
+                                                    {users.map(user =>
+                                                        <option key={user.id} value={user.firstName + ' ' + user.lastName}>{user.firstName} {user.lastName}</option>
+                                                    )}
+                                                </Input>
+                                                <br/>
+                                                <Input s={12} type='select' onChange={this.handleManagerToggle} >
+                                                    <option value="" disabled selected>Approving Manager</option>
+                                                    {users.filter(user => user.role === 'Manager').map(user =>
+                                                        <option key={user.id} value={user.firstName + ' ' + user.lastName}>{user.firstName} {user.lastName}</option>
+                                                    )}                                                        
+                                                </Input>
+                                                <br/>
                                             </div>
                                             <div>
                                                 <input className='validate' type="date" name='transactionDate' id='transactionDate' onChange={this.handleDateInput} required/>
@@ -183,27 +175,22 @@ export default class AddError extends Component {
                                         <hr/>
                                         <form key="accessory" onSubmit={this.handleClick}>
                                             <div className="container">
-                                                <div className="input-field">
-                                                    <Input s={12} type='select' onChange={this.handleIssueToggle} required>
-                                                        <option value="" disabled selected>Choose issue</option>
-                                                        <option value="Missing">Missing</option>
-                                                        <option value="Damaged">Damaged</option>
-                                                        <option value="Incorrect Item">Incorrect Item</option>
-                                                        <option value="Missing Return Receipt">Missing Return Receipt</option>
-                                                        <option value="Missing Status">Missing Status</option>
-                                                    </Input>
-                                                    <br/>
-                                                </div>
-                                                <div className="input-field">
-                                                    <Input s={12} type='select' onChange={this.handleRepToggle} required>
-                                                        <option value="" disabled selected>Rep</option>
-                                                        <option value="Tom Jones">Tom Jones</option>
-                                                        <option value="Marcus Thomas">Marcus Thomas</option>
-                                                        <option value="Jeff Sinclair">Jeff Sinclair</option>
-                                                        <option value="R. Kelley">R. Kelley</option>
-                                                    </Input>
-                                                    <br/>
-                                                </div>
+                                                <Input s={12} type='select' onChange={this.handleIssueToggle} required>
+                                                    <option value="" disabled selected>Choose issue</option>
+                                                    <option value="Missing">Missing</option>
+                                                    <option value="Damaged">Damaged</option>
+                                                    <option value="Incorrect Item">Incorrect Item</option>
+                                                    <option value="Missing Return Receipt">Missing Return Receipt</option>
+                                                    <option value="Missing Status">Missing Status</option>
+                                                </Input>
+                                                <br/>
+                                                <Input s={12} type='select' onChange={this.handleRepToggle} required>
+                                                    <option value="" disabled selected>Rep</option>
+                                                    {users.map(user =>
+                                                        <option key={user.id} value={user.firstName + ' ' + user.lastName}>{user.firstName} {user.lastName}</option>
+                                                    )}
+                                                </Input>
+                                                <br/>
                                             </div>
                                             <div>
                                                 <input className='validate' type="date" name='transactionDate' id='transactionDate' onChange={this.handleDateInput} required/>
@@ -246,25 +233,20 @@ export default class AddError extends Component {
                                         <hr/>
                                         <form key="signature" onSubmit={this.handleClick}>
                                             <div className="container">
-                                                <div className="input-field">
-                                                    <Input s={12} type='select' onChange={this.handleIssueToggle} required>
-                                                        <option value="" disabled selected>Choose issue</option>
-                                                        <option value="DP">DP</option>
-                                                        <option value="Activation">Activation</option>
-                                                        <option value="Upgrade">Upgrade</option>
-                                                    </Input>
-                                                    <br/>
-                                                </div>
-                                                <div className="input-field">
-                                                    <Input s={12} type='select' onChange={this.handleRepToggle} required>
-                                                        <option value="" disabled selected>Rep</option>
-                                                        <option value="Tom Jones">Tom Jones</option>
-                                                        <option value="Marcus Thomas">Marcus Thomas</option>
-                                                        <option value="Jeff Sinclair">Jeff Sinclair</option>
-                                                        <option value="R. Kelley">R. Kelley</option>
-                                                    </Input>
-                                                    <br/>
-                                                </div>
+                                                <Input s={12} type='select' onChange={this.handleIssueToggle} required>
+                                                    <option value="" disabled selected>Choose issue</option>
+                                                    <option value="DP">DP</option>
+                                                    <option value="Activation">Activation</option>
+                                                    <option value="Upgrade">Upgrade</option>
+                                                </Input>
+                                                <br/>
+                                                <Input s={12} type='select' onChange={this.handleRepToggle} required>
+                                                    <option value="" disabled selected>Rep</option>
+                                                    {users.map(user =>
+                                                        <option key={user.id} value={user.firstName + ' ' + user.lastName}>{user.firstName} {user.lastName}</option>
+                                                    )}
+                                                </Input>
+                                                <br/>
                                             </div>
                                             <div>
                                                 <input className='validate' type="date" name='transactionDate' id='transactionDate' onChange={this.handleDateInput} required/>
@@ -307,26 +289,21 @@ export default class AddError extends Component {
                                         <hr/>
                                         <form key="trade" onSubmit={this.handleClick}>
                                             <div className="container">
-                                                <div className="input-field">
-                                                    <Input s={12} type='select' onChange={this.handleIssueToggle} required>
-                                                        <option value="" disabled selected>Choose issue</option>
-                                                        <option value="Missing">Missing</option>
-                                                        <option value="Device Not Reset">Device Not Reset</option>
-                                                        <option value="Incorrect Device">Incorrect Device</option>
-                                                        <option value="Missing Trade Receipt">Missing Trade Receipt</option>
-                                                    </Input>
-                                                    <br/>
-                                                </div>
-                                                <div className="input-field">
-                                                    <Input s={12} type='select' onChange={this.handleRepToggle} required>
-                                                        <option value="" disabled selected>Rep</option>
-                                                        <option value="Tom Jones">Tom Jones</option>
-                                                        <option value="Marcus Thomas">Marcus Thomas</option>
-                                                        <option value="Jeff Sinclair">Jeff Sinclair</option>
-                                                        <option value="R. Kelley">R. Kelley</option>
-                                                    </Input>
-                                                    <br/>
-                                                </div>
+                                                <Input s={12} type='select' onChange={this.handleIssueToggle} required>
+                                                    <option value="" disabled selected>Choose issue</option>
+                                                    <option value="Missing">Missing</option>
+                                                    <option value="Device Not Reset">Device Not Reset</option>
+                                                    <option value="Incorrect Device">Incorrect Device</option>
+                                                    <option value="Missing Trade Receipt">Missing Trade Receipt</option>
+                                                </Input>
+                                                <br/>
+                                                <Input s={12} type='select' onChange={this.handleRepToggle} required>
+                                                    <option value="" disabled selected>Rep</option>
+                                                    {users.map(user =>
+                                                        <option key={user.id} value={user.firstName + ' ' + user.lastName}>{user.firstName} {user.lastName}</option>
+                                                    )}
+                                                </Input>
+                                                <br/>
                                             </div>
                                             <div>
                                                 <input className='validate' type="date" name='transactionDate' id='transactionDate' onChange={this.handleDateInput} required/>
@@ -369,15 +346,13 @@ export default class AddError extends Component {
                                         <hr/>
                                         <form key="add">
                                             <div className="container">
-                                                <div className="input-field">
-                                                    <Input s={12} type='select' onChange={this.handleErrorToggle}>
-                                                        <option value="" selected disabled>Choose your option</option>
-                                                        <option value="Device Return">Device Return</option>
-                                                        <option value="Accessory Return">Accessory Return</option>
-                                                        <option value="Missing Signature">Missing Signature</option>
-                                                        <option value="Trade-In">Trade-In</option>
-                                                    </Input>
-                                                </div>
+                                                <Input s={12} type='select' onChange={this.handleErrorToggle}>
+                                                    <option value="" selected disabled>Choose your option</option>
+                                                    <option value="Device Return">Device Return</option>
+                                                    <option value="Accessory Return">Accessory Return</option>
+                                                    <option value="Missing Signature">Missing Signature</option>
+                                                    <option value="Trade-In">Trade-In</option>
+                                                </Input>
                                             </div>
                                         </form>
                                     </div>
