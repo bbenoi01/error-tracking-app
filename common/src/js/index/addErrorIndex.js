@@ -3,6 +3,7 @@ import AddError from '../components/addError';
 
 function mapStoreToProps(store) {
     return {
+        users: store.app.users,
         errorType: store.addError.errorType,
         issue: store.addError.issue,
         employeeName: store.addError.employeeName,

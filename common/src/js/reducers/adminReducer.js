@@ -1,7 +1,7 @@
 import { types } from '../actions/adminActions';
 
 const INITIAL_STATE = {
-    employeeType: '',
+    role: '',
     employeeId: '',
     firstName: '',
     lastName: ''
@@ -10,10 +10,10 @@ const INITIAL_STATE = {
 export default function AdminReducer(state = INITIAL_STATE, action) {
     const { type, payload } = action;
     switch (type) {
-        case (types.ADD_EMPLOYEE_TOGGLE): {
+        case (types.EMPLOYEE_ROLE_TOGGLE): {
             return {
                 ...state,
-                employeeType: payload
+                role: payload
             };
             break;
         }
@@ -42,21 +42,10 @@ export default function AdminReducer(state = INITIAL_STATE, action) {
             break;
         }
 
-        case (types.ADD_MANAGER): {
+        case (types.NEW_EMPLOYEE): {
             return {
                 ...state,
-                employeeType: payload.employeeType,
-                employeeId: payload.employeeId,
-                firstName: payload.firstName,
-                lastName: payload.lastName
-            };
-            break;
-        }
-
-        case (types.ADD_REP): {
-            return {
-                ...state,
-                employeeType: payload.employeeType,
+                role: payload.role,
                 employeeId: payload.employeeId,
                 firstName: payload.firstName,
                 lastName: payload.lastName

@@ -3,7 +3,8 @@ import Admin from '../components/admin';
 
 function mapStoreToProps(store) {
     return {
-        employeeType: store.admin.employeeType,
+        users: store.app.users,
+        role: store.admin.role,
         employeeId: store.admin.employeeId,
         firstName: store.admin.firstName,
         lastName: store.admin.lastName
