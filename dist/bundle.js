@@ -28750,7 +28750,7 @@ var AddError = function (_Component) {
                                     { className: 'card col s8 offset-s2' },
                                     _react2.default.createElement(
                                         'div',
-                                        { className: 'card-content' },
+                                        { className: 'card-content', style: { paddingBottom: '0' } },
                                         _react2.default.createElement(
                                             'span',
                                             { className: 'card-title center' },
@@ -28938,7 +28938,7 @@ var AddError = function (_Component) {
                                     { className: 'card col s8 offset-s2' },
                                     _react2.default.createElement(
                                         'div',
-                                        { className: 'card-content' },
+                                        { className: 'card-content', style: { paddingBottom: '0' } },
                                         _react2.default.createElement(
                                             'span',
                                             { className: 'card-title center' },
@@ -29090,7 +29090,7 @@ var AddError = function (_Component) {
                                     { className: 'card col s8 offset-s2' },
                                     _react2.default.createElement(
                                         'div',
-                                        { className: 'card-content' },
+                                        { className: 'card-content', style: { paddingBottom: '0' } },
                                         _react2.default.createElement(
                                             'span',
                                             { className: 'card-title center' },
@@ -29232,7 +29232,7 @@ var AddError = function (_Component) {
                                     { className: 'card col s8 offset-s2' },
                                     _react2.default.createElement(
                                         'div',
-                                        { className: 'card-content' },
+                                        { className: 'card-content', style: { paddingBottom: '0' } },
                                         _react2.default.createElement(
                                             'span',
                                             { className: 'card-title center' },
@@ -33942,7 +33942,7 @@ var Admin = function (_Component) {
                                     _react2.default.createElement('hr', null),
                                     _react2.default.createElement(
                                         'div',
-                                        { className: 'card-content' },
+                                        { className: 'card-content', id: 'list' },
                                         users.map(function (user) {
                                             return _react2.default.createElement(
                                                 'div',
@@ -34025,7 +34025,7 @@ var Admin = function (_Component) {
                             ),
                             _react2.default.createElement(
                                 'div',
-                                { className: 'col l5 offset-l1 s12 card' },
+                                { className: 'col l6 offset-l1 s12 card' },
                                 _react2.default.createElement(
                                     'div',
                                     { className: 'card-content', style: { paddingBottom: '0' } },
@@ -34222,12 +34222,16 @@ var Details = function (_Component) {
                                     _react2.default.createElement(
                                         'span',
                                         { className: 'card-title center' },
-                                        'All Reps'
+                                        _react2.default.createElement(
+                                            'b',
+                                            null,
+                                            'All Reps'
+                                        )
                                     ),
                                     _react2.default.createElement('hr', null),
                                     _react2.default.createElement(
                                         'div',
-                                        { className: 'card-content' },
+                                        { className: 'card-content', id: 'list' },
                                         users.map(function (user) {
                                             return _react2.default.createElement(
                                                 'div',
@@ -34291,12 +34295,16 @@ var Details = function (_Component) {
                                     _react2.default.createElement(
                                         'span',
                                         { className: 'card-title center' },
-                                        'Errors'
+                                        _react2.default.createElement(
+                                            'b',
+                                            null,
+                                            'Errors'
+                                        )
                                     ),
                                     _react2.default.createElement('hr', null),
                                     _react2.default.createElement(
                                         'div',
-                                        { className: 'card-content' },
+                                        { className: 'card-content', id: 'list' },
                                         errors.filter(function (error) {
                                             return error.errorType === 'Device Return';
                                         }).map(function (error) {
@@ -34407,7 +34415,7 @@ var Details = function (_Component) {
                                                             _react2.default.createElement(
                                                                 'button',
                                                                 { className: 'btn red' },
-                                                                'Filter'
+                                                                'Delete'
                                                             )
                                                         )
                                                     )
@@ -34513,7 +34521,7 @@ var Details = function (_Component) {
                                                             _react2.default.createElement(
                                                                 'button',
                                                                 { className: 'btn red' },
-                                                                'Filter'
+                                                                'Delete'
                                                             )
                                                         )
                                                     )
@@ -34619,7 +34627,7 @@ var Details = function (_Component) {
                                                             _react2.default.createElement(
                                                                 'button',
                                                                 { className: 'btn red' },
-                                                                'Filter'
+                                                                'Delete'
                                                             )
                                                         )
                                                     )
@@ -34725,7 +34733,7 @@ var Details = function (_Component) {
                                                             _react2.default.createElement(
                                                                 'button',
                                                                 { className: 'btn red' },
-                                                                'Filter'
+                                                                'Delete'
                                                             )
                                                         )
                                                     )

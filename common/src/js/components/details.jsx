@@ -18,9 +18,9 @@ export default class Details extends Component {
                         <div className="row">
                             <div className="card col s5">
                                 <div className="card-content">
-                                    <span className="card-title center">All Reps</span>
+                                    <span className="card-title center"><b>All Reps</b></span>
                                     <hr/>
-                                    <div className="card-content">
+                                    <div className="card-content" id='list'>
                                         {users.map(user =>
                                             <div className="col s12" key={user.id}>
                                                 <div className="card">
@@ -41,9 +41,9 @@ export default class Details extends Component {
                             </div>
                             <div className="card col s6 offset-s1">
                                 <div className="card-content">
-                                    <span className="card-title center">Errors</span>
+                                    <span className="card-title center"><b>Errors</b></span>
                                     <hr/>
-                                    <div className="card-content">
+                                    <div className="card-content" id='list'>
                                         {errors.filter(error => error.errorType === 'Device Return').map(error =>
                                             <div className="col s12" key={error.id}>
                                                 <div className="card">
@@ -59,7 +59,7 @@ export default class Details extends Component {
                                                             <p><b>Notes:</b> {error.notes}</p>
                                                         </div>
                                                         <div className="card-action center">
-                                                            <button className="btn red">Filter</button>
+                                                            <button className="btn red">Delete</button>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -79,7 +79,7 @@ export default class Details extends Component {
                                                             <p><b>Notes:</b> {error.notes}</p>
                                                         </div>
                                                         <div className="card-action center">
-                                                            <button className="btn red">Filter</button>
+                                                            <button className="btn red">Delete</button>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -99,7 +99,7 @@ export default class Details extends Component {
                                                             <p><b>Notes:</b> {error.notes}</p>
                                                         </div>
                                                         <div className="card-action center">
-                                                            <button className="btn red">Filter</button>
+                                                            <button className="btn red">Delete</button>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -119,7 +119,7 @@ export default class Details extends Component {
                                                             <p><b>Notes:</b> {error.notes}</p>
                                                         </div>
                                                         <div className="card-action center">
-                                                            <button className="btn red">Filter</button>
+                                                            <button className="btn red">Delete</button>
                                                         </div>
                                                     </div>
                                                 </div>
