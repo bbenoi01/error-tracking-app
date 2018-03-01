@@ -74,7 +74,7 @@ export default class Admin extends Component {
                                 <div className="card-content">
                                     <span className="card-title center"><b>Reps</b></span>
                                     <hr/>
-                                    <div className="card-content">
+                                    <div className="card-content" id='list'>
                                         {users.map(user =>
                                             <div className="col s12" key={user.id}>
                                                 <div className="card">
@@ -103,7 +103,7 @@ export default class Admin extends Component {
                                     </div>
                                 </div>
                             </div>
-                            <div className="col l5 offset-l1 s12 card">
+                            <div className="col l6 offset-l1 s12 card">
                                 <div className="card-content" style={{paddingBottom: '0'}}>
                                     <span className="card-title center"><b>Add Employee</b></span>
                                     <hr/>

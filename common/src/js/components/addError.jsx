@@ -102,7 +102,7 @@ export default class AddError extends Component {
                         <div className="container">
                             <div className="row">
                                 <div className="card col s8 offset-s2">
-                                    <div className="card-content">
+                                    <div className="card-content" style={{paddingBottom: '0'}}>
                                         <span className="card-title center"><b>Device Return</b></span>
                                         <hr/>
                                         <form key="device" onSubmit={this.handleClick}>
@@ -170,7 +170,7 @@ export default class AddError extends Component {
                         <div className="container">
                             <div className="row">
                                 <div className="card col s8 offset-s2">
-                                    <div className="card-content">
+                                    <div className="card-content" style={{paddingBottom: '0'}}>
                                         <span className="card-title center"><b>Accessory Return</b></span>
                                         <hr/>
                                         <form key="accessory" onSubmit={this.handleClick}>
@@ -228,7 +228,7 @@ export default class AddError extends Component {
                         <div className="container">
                             <div className="row">
                                 <div className="card col s8 offset-s2">
-                                    <div className="card-content">
+                                    <div className="card-content" style={{paddingBottom: '0'}}>
                                         <span className="card-title center"><b>Missing Signature</b></span>
                                         <hr/>
                                         <form key="signature" onSubmit={this.handleClick}>
@@ -284,7 +284,7 @@ export default class AddError extends Component {
                         <div className="container">
                             <div className="row">
                                 <div className="card col s8 offset-s2">
-                                    <div className="card-content">
+                                    <div className="card-content" style={{paddingBottom: '0'}}>
                                         <span className="card-title center"><b>Trade-In</b></span>
                                         <hr/>
                                         <form key="trade" onSubmit={this.handleClick}>

@@ -4,7 +4,7 @@ body,
 #root > div {
   background-color: #9e9e9e;
   min-height: 100vh;
-  min-width: 100vw;
+  max-width: 100vw;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -16,4 +16,8 @@ nav {
 }
 #full-page {
   min-height: 90vh;
+}
+#list {
+  overflow: auto;
+  max-height: 75vh;
 }
