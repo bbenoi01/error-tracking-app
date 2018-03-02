@@ -9,7 +9,7 @@
     "build": "npm run less && webpack",
     "less": "lessc common/src/css/style.less dist/css/style.css",
     "lint": "eslint .",
-    "start": "node .",
+    "start": "npm run build && node .",
     "posttest": "npm run lint && nsp check"
   },
   "dependencies": {
