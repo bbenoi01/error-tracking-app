@@ -18,7 +18,7 @@ export function findUsers() {
                 payload: res.data
             })      
         })
-        .catch(err => console.log(err))    
+        .catch(err => console.log('Error, users not found'))    
     };
 }
 
@@ -56,7 +56,7 @@ export function addEmployee(role, employeeId, firstName, lastName) {
         .then(res => {
             dispatch(findUsers())
         })
-        .catch(err => console.log(err))     
+        .catch(err => console.log('Error, employee not added'))     
     }
 }
 
@@ -66,6 +66,6 @@ export function removeEmployee(id) {
         .then(res => {
             dispatch(findUsers())
         })
-        .catch(err => console.log(err))
+        .catch(err => console.log('Error, employee not removed'))
     }
 }

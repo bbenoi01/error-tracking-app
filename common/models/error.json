@@ -37,6 +37,11 @@
     },
     "notes": {
       "type": "string"
+    },
+    "hidden": {
+      "type": "boolean",
+      "required": true,
+      "default": false
     }
   },
   "validations": [],
