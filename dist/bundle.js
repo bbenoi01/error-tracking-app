@@ -4360,7 +4360,7 @@ function findUsers() {
                 payload: res.data
             });
         }).catch(function (err) {
-            return console.log(err);
+            return console.log('Error, users not found');
         });
     };
 }
@@ -4372,6 +4372,8 @@ function findErrors() {
                 type: types.ALL_ERRORS,
                 payload: res.data
             });
+        }).catch(function (err) {
+            return console.log('Error, errors not found');
         });
     };
 }
@@ -5375,25 +5377,25 @@ function addError(errorType, issue, employeeId, approvingManager, transactionDat
             _axios2.default.post('http://localhost:3000/api/errors', { errorType: errorType, issue: issue, employeeId: employeeId, approvingManager: approvingManager, transactionDate: transactionDate, orderNumber: orderNumber, sku: sku, notes: notes }).then(function (res) {
                 dispatch(findErrors());
             }).catch(function (err) {
-                return console.log('err');
+                return console.log('Error not logged');
             });
         } else if (errorType == 'Accessory Return') {
             _axios2.default.post('http://localhost:3000/api/errors', { errorType: errorType, issue: issue, employeeId: employeeId, transactionDate: transactionDate, orderNumber: orderNumber, sku: sku, notes: notes }).then(function (res) {
                 dispatch(findErrors());
             }).catch(function (err) {
-                return console.log('err');
+                return console.log('Error not logged');
             });
         } else if (errorType == 'Missing Signature') {
             _axios2.default.post('http://localhost:3000/api/errors', { errorType: errorType, issue: issue, employeeId: employeeId, transactionDate: transactionDate, orderNumber: orderNumber, installmentAgreement: installmentAgreement, notes: notes }).then(function (res) {
                 dispatch(findErrors());
             }).catch(function (err) {
-                return console.log('err');
+                return console.log('Error not logged');
             });
         } else if (errorType == 'Trade-In') {
             _axios2.default.post('http://localhost:3000/api/errors', { errorType: errorType, issue: issue, employeeId: employeeId, transactionDate: transactionDate, orderNumber: orderNumber, sku: sku, notes: notes }).then(function (res) {
                 dispatch(findErrors());
             }).catch(function (err) {
-                return console.log('err');
+                return console.log('Error not logged');
             });
         }
     };
@@ -5441,7 +5443,7 @@ function findUsers() {
                 payload: res.data
             });
         }).catch(function (err) {
-            return console.log(err);
+            return console.log('Error, users not found');
         });
     };
 }
@@ -5479,7 +5481,7 @@ function addEmployee(role, employeeId, firstName, lastName) {
         _axios2.default.post('http://localhost:3000/api/users', { role: role, employeeId: employeeId, firstName: firstName, lastName: lastName }).then(function (res) {
             dispatch(findUsers());
         }).catch(function (err) {
-            return console.log(err);
+            return console.log('Error, employee not added');
         });
     };
 }
@@ -5489,7 +5491,7 @@ function removeEmployee(id) {
         _axios2.default.delete('http://localhost:3000/api/users/' + id).then(function (res) {
             dispatch(findUsers());
         }).catch(function (err) {
-            return console.log(err);
+            return console.log('Error, employee not removed');
         });
     };
 }
@@ -28640,7 +28642,6 @@ var AddError = function (_Component) {
             var dispatch = this.props.dispatch;
             var value = e.target.value;
 
-            console.log(value);
             dispatch((0, _addErrorActions.repToggle)(value));
         }
     }, {
@@ -28724,7 +28725,6 @@ var AddError = function (_Component) {
                 errorType = _props2.errorType,
                 users = _props2.users;
 
-            console.log(users);
 
             if (errorType == 'Device Return') {
                 return _react2.default.createElement(
@@ -34189,6 +34189,7 @@ var Details = function (_Component) {
 
         _this.handleClick = _this.handleClick.bind(_this);
         _this.handleRepErrorDelete = _this.handleRepErrorDelete.bind(_this);
+        _this.handleFilterClick = _this.handleFilterClick.bind(_this);
         return _this;
     }
 
@@ -34207,6 +34208,14 @@ var Details = function (_Component) {
             var id = e.target.id;
 
             dispatch((0, _detailsAction.removeItem)(id));
+        }
+    }, {
+        key: 'handleFilterClick',
+        value: function handleFilterClick(e) {
+            var dispatch = this.props.dispatch;
+            var id = e.target.id;
+
+            dispatch((0, _detailsAction.filter)(id));
         }
     }, {
         key: 'render',
@@ -34299,7 +34308,7 @@ var Details = function (_Component) {
                                                                     { className: 'col s5' },
                                                                     _react2.default.createElement(
                                                                         'button',
-                                                                        { className: 'btn red' },
+                                                                        { onClick: _this2.handleFilterClick, id: user.employeeId, className: 'btn red' },
                                                                         'Filter'
                                                                     )
                                                                 ),
@@ -34341,7 +34350,7 @@ var Details = function (_Component) {
                                         'div',
                                         { className: 'card-content', id: 'list' },
                                         errors.filter(function (error) {
-                                            return error.errorType === 'Device Return';
+                                            return error.errorType === 'Device Return' && error.hidden === false;
                                         }).map(function (error) {
                                             return _react2.default.createElement(
                                                 'div',
@@ -34458,7 +34467,7 @@ var Details = function (_Component) {
                                             );
                                         }),
                                         errors.filter(function (error) {
-                                            return error.errorType === 'Accessory Return';
+                                            return error.errorType === 'Accessory Return' && error.hidden === false;
                                         }).map(function (error) {
                                             return _react2.default.createElement(
                                                 'div',
@@ -34564,7 +34573,7 @@ var Details = function (_Component) {
                                             );
                                         }),
                                         errors.filter(function (error) {
-                                            return error.errorType === 'Missing Signature';
+                                            return error.errorType === 'Missing Signature' && error.hidden === false;
                                         }).map(function (error) {
                                             return _react2.default.createElement(
                                                 'div',
@@ -34670,7 +34679,7 @@ var Details = function (_Component) {
                                             );
                                         }),
                                         errors.filter(function (error) {
-                                            return error.errorType === 'Trade-In';
+                                            return error.errorType === 'Trade-In' && error.hidden === false;
                                         }).map(function (error) {
                                             return _react2.default.createElement(
                                                 'div',
@@ -34801,6 +34810,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 exports.types = undefined;
+exports.filter = filter;
 exports.removedFiltered = removedFiltered;
 exports.findErrors = findErrors;
 exports.removeItem = removeItem;
@@ -34815,6 +34825,24 @@ var types = exports.types = {
     ALL_ERRORS: 'ALL_ERRORS'
 };
 
+function filter(id) {
+    var count = 0;
+    return function (dispatch) {
+        _axios2.default.get('http://localhost:3000/api/errors').then(function (res) {
+            res.data.filter(function (errors) {
+                return errors.employeeId !== id;
+            }).map(function (error) {
+                count++;
+                _axios2.default.patch('http://localhost:3000/api/errors/' + error.id, { hidden: !error.hidden });
+            });
+        }).then(function (res) {
+            dispatch(findErrors());
+        }).catch(function (err) {
+            return console.log('Error, errors not filtered');
+        });
+    };
+}
+
 function removedFiltered(id) {
     var count = 0;
     return function (dispatch) {
@@ -34828,7 +34856,7 @@ function removedFiltered(id) {
         }).then(function (res) {
             dispatch(findErrors());
         }).catch(function (err) {
-            return console.log('err');
+            return console.log('Error, filtered not removed');
         });
     };
 }
@@ -34840,6 +34868,8 @@ function findErrors() {
                 type: types.ALL_ERRORS,
                 payload: res.data
             });
+        }).catch(function (err) {
+            return console.log('Error, errors not found');
         });
     };
 }
@@ -34849,7 +34879,7 @@ function removeItem(id) {
         _axios2.default.delete('http://localhost:3000/api/errors/' + id).then(function (res) {
             dispatch(findErrors());
         }).catch(function (err) {
-            return console.log('err');
+            return console.log('Error, item not removed');
         });
     };
 }

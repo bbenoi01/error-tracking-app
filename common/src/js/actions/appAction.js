@@ -14,7 +14,7 @@ export function findUsers() {
                 payload: res.data
             })      
         })
-        .catch(err => console.log(err))     
+        .catch(err => console.log('Error, users not found'))     
     };
 }
 
@@ -27,5 +27,6 @@ export function findErrors() {
                 payload: res.data
             })
         })
+        .catch(err => console.log('Error, errors not found'))
     };
 }

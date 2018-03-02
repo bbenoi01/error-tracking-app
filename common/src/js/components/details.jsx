@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import Navbar from '../index/navbarIndex';
 import {
     removeItem,
-    removedFiltered
+    removedFiltered,
+    filter
 } from '../actions/detailsAction';
 
 
@@ -12,6 +13,7 @@ export default class Details extends Component {
 
         this.handleClick = this.handleClick.bind(this);
         this.handleRepErrorDelete = this.handleRepErrorDelete.bind(this);
+        this.handleFilterClick = this.handleFilterClick.bind(this);
     }
 
     handleRepErrorDelete(e) {
@@ -24,6 +26,12 @@ export default class Details extends Component {
         const { dispatch } = this.props;
         const { id } = e.target;
         dispatch(removeItem(id));
+    }
+
+    handleFilterClick(e) {
+        const { dispatch } = this.props;
+        const { id } = e.target;
+        dispatch(filter(id));
     }
 
     render() {
@@ -51,7 +59,7 @@ export default class Details extends Component {
                                                         <div className="card-action center" style={{paddingBottom: '1px'}}>
                                                             <div className="row">
                                                                 <div className="col s5">
-                                                                    <button className="btn red">Filter</button>
+                                                                    <button onClick={this.handleFilterClick} id={user.employeeId} className="btn red">Filter</button>
                                                                 </div>
                                                                 <div className="col s5 offset-s1">
                                                                     <button onClick={this.handleRepErrorDelete} id={user.employeeId} className="btn red">Delete</button>
@@ -70,7 +78,7 @@ export default class Details extends Component {
                                     <span className="card-title center"><b>Errors</b></span>
                                     <hr/>
                                     <div className="card-content" id='list'>
-                                        {errors.filter(error => error.errorType === 'Device Return').map(error =>
+                                        {errors.filter(error => error.errorType === 'Device Return' && error.hidden === false).map(error =>
                                             <div className="col s12" key={error.id}>
                                                 <div className="card">
                                                     <div style={{paddingBottom: '0'}} className="card-content">
@@ -91,7 +99,7 @@ export default class Details extends Component {
                                                 </div>
                                             </div>
                                         )}
-                                        {errors.filter(error => error.errorType === 'Accessory Return').map(error =>
+                                        {errors.filter(error => error.errorType === 'Accessory Return' && error.hidden === false).map(error =>
                                             <div className="col s12" key={error.id}>
                                                 <div className="card">
                                                     <div style={{paddingBottom: '0'}} className="card-content">
@@ -111,7 +119,7 @@ export default class Details extends Component {
                                                 </div>
                                             </div>
                                         )}
-                                        {errors.filter(error => error.errorType === 'Missing Signature').map(error =>
+                                        {errors.filter(error => error.errorType === 'Missing Signature' && error.hidden === false).map(error =>
                                             <div className="col s12" key={error.id}>
                                                 <div className="card">
                                                     <div style={{paddingBottom: '0'}} className="card-content">
@@ -131,7 +139,7 @@ export default class Details extends Component {
                                                 </div>
                                             </div>
                                         )}
-                                        {errors.filter(error => error.errorType === 'Trade-In').map(error =>
+                                        {errors.filter(error => error.errorType === 'Trade-In' && error.hidden === false).map(error =>
                                             <div className="col s12" key={error.id}>
                                                 <div className="card">
                                                     <div style={{paddingBottom: '0'}} className="card-content">

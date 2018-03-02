@@ -102,25 +102,25 @@ export function addError(errorType, issue, employeeId, approvingManager, transac
             .then(res => {
                 dispatch(findErrors())
             })
-            .catch(err => console.log('err'))
+            .catch(err => console.log('Error not logged'))
         } else if (errorType == 'Accessory Return') {
             axios.post('http://localhost:3000/api/errors', { errorType, issue, employeeId, transactionDate, orderNumber, sku, notes })
             .then(res => {
                 dispatch(findErrors())
             })
-            .catch(err => console.log('err'))
+            .catch(err => console.log('Error not logged'))
         } else if (errorType == 'Missing Signature') {
             axios.post('http://localhost:3000/api/errors', { errorType, issue, employeeId, transactionDate, orderNumber, installmentAgreement, notes })
             .then(res => {
                 dispatch(findErrors())
             })
-            .catch(err => console.log('err'))
+            .catch(err => console.log('Error not logged'))
         } else if (errorType == 'Trade-In') {
             axios.post('http://localhost:3000/api/errors', { errorType, issue, employeeId, transactionDate, orderNumber, sku, notes })
             .then(res => {
                 dispatch(findErrors())
             })
-            .catch(err => console.log('err'))
+            .catch(err => console.log('Error not logged'))
         }
     }
 }

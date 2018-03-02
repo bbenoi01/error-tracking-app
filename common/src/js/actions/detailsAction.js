@@ -4,6 +4,23 @@ export const types = {
     ALL_ERRORS: 'ALL_ERRORS'
 }
 
+export function filter(id) {
+    var count = 0;
+    return (dispatch) => {
+        axios.get('http://localhost:3000/api/errors')
+        .then(res => {
+            res.data.filter(errors => errors.employeeId !== id).map(error => {
+                count ++
+                axios.patch(`http://localhost:3000/api/errors/${error.id}`, {hidden: !error.hidden})
+            })
+        })
+        .then(res => {
+            dispatch(findErrors())
+        })
+        .catch(err => console.log('Error, errors not filtered'))
+    };
+}
+
 export function removedFiltered(id) {
     var count = 0;
     return (dispatch) => {
@@ -17,7 +34,7 @@ export function removedFiltered(id) {
       .then(res => {
           dispatch(findErrors())
       })
-      .catch(err => console.log('err'))
+      .catch(err => console.log('Error, filtered not removed'))
     };
 }
 
@@ -30,6 +47,7 @@ export function findErrors() {
                 payload: res.data
             })
         })
+        .catch(err => console.log('Error, errors not found'))
     };
 }
 
@@ -39,6 +57,6 @@ export function removeItem(id) {
         .then(res => {
             dispatch(findErrors())
         })
-        .catch(err => console.log('err'))
+        .catch(err => console.log('Error, item not removed'))
     }
 }

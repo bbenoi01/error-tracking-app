@@ -40,7 +40,6 @@ export default class AddError extends Component {
     handleRepToggle(e) {
         const { dispatch } = this.props;
         const { value } = e.target;
-        console.log(value);
         dispatch(repToggle(value));
     }
 
@@ -94,7 +93,6 @@ export default class AddError extends Component {
 
     render() {
         const { errorType, users } = this.props;
-        console.log(users);
 
          if (errorType == 'Device Return') {
             return (
