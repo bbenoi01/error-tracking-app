@@ -7,11 +7,11 @@ export const types = {
 export function filter(id) {
     var count = 0;
     return (dispatch) => {
-        axios.get('http://localhost:3000/api/errors')
+        axios.get('https://bb-error-tracker.herokuapp.com/api/errors')
         .then(res => {
             res.data.filter(errors => errors.employeeId !== id).map(error => {
                 count ++
-                axios.patch(`http://localhost:3000/api/errors/${error.id}`, {hidden: !error.hidden})
+                axios.patch(`https://bb-error-tracker.herokuapp.com/api/errors/${error.id}`, {hidden: !error.hidden})
             })
         })
         .then(res => {
@@ -24,11 +24,11 @@ export function filter(id) {
 export function removedFiltered(id) {
     var count = 0;
     return (dispatch) => {
-      axios.get('http://localhost:3000/api/errors')
+      axios.get('https://bb-error-tracker.herokuapp.com/api/errors')
       .then(res => {
           res.data.filter(errors => errors.employeeId === id).map(errorDelete => {
               count ++
-              axios.delete(`http://localhost:3000/api/errors/${errorDelete.id}`)
+              axios.delete(`https://bb-error-tracker.herokuapp.com/api/errors/${errorDelete.id}`)
           })
       })
       .then(res => {
@@ -40,7 +40,7 @@ export function removedFiltered(id) {
 
 export function findErrors() {
     return (dispatch) => {
-        axios.get('http://localhost:3000/api/errors')
+        axios.get('https://bb-error-tracker.herokuapp.com/api/errors')
         .then(res => {
             dispatch({
                 type: types.ALL_ERRORS,
@@ -53,7 +53,7 @@ export function findErrors() {
 
 export function removeItem(id) {
     return (dispatch) => {
-        axios.delete(`http://localhost:3000/api/errors/${id}`)
+        axios.delete(`https://bb-error-tracker.herokuapp.com/api/errors/${id}`)
         .then(res => {
             dispatch(findErrors())
         })

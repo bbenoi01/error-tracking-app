@@ -11,7 +11,7 @@ export const types = {
 
 export function findUsers() {
     return (dispatch) => {
-        axios.get('http://localhost:3000/api/users')
+        axios.get('https://bb-error-tracker.herokuapp.com/api/users')
         .then(res => {
             dispatch({
                 type: types.ALL_USERS,
@@ -52,7 +52,7 @@ export function updateLastName(value) {
 
 export function addEmployee(role, employeeId, firstName, lastName) {
     return (dispatch) => {
-        axios.post('http://localhost:3000/api/users', { role, employeeId, firstName, lastName })
+        axios.post('https://bb-error-tracker.herokuapp.com/api/users', { role, employeeId, firstName, lastName })
         .then(res => {
             dispatch(findUsers())
         })
@@ -62,7 +62,7 @@ export function addEmployee(role, employeeId, firstName, lastName) {
 
 export function removeEmployee(id) {
     return (dispatch) => {
-        axios.delete(`http://localhost:3000/api/users/${id}`)
+        axios.delete(`https://bb-error-tracker.herokuapp.com/api/users/${id}`)
         .then(res => {
             dispatch(findUsers())
         })
