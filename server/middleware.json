@@ -30,7 +30,12 @@
       "enabled": false
     },
     "morgan": {
-      "params": ["dev", { "buffer": true } ]
+      "params": [
+        "dev",
+        {
+          "buffer": true
+        }
+      ]
     }
   },
   "session": {},
@@ -44,12 +49,14 @@
     }
   },
   "files": {
-    "loopback#static": [{
-      "params": "$!../client"
-    },
-    {
-      "params": "$!../dist"
-  }]
+    "loopback#static": [
+      {
+        "params": "$!../client"
+      },
+      {
+        "params": "$!../dist"
+      }
+    ]
   },
   "final": {
     "loopback#urlNotFound": {}

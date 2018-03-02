@@ -1534,6 +1534,12 @@ var locationsAreEqual = function locationsAreEqual(a, b) {
 /* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
+module.exports = __webpack_require__(137);
+
+/***/ }),
+/* 21 */
+/***/ (function(module, exports, __webpack_require__) {
+
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {/**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -1547,7 +1553,7 @@ var locationsAreEqual = function locationsAreEqual(a, b) {
 if (process.env.NODE_ENV !== 'production') {
   var invariant = __webpack_require__(12);
   var warning = __webpack_require__(18);
-  var ReactPropTypesSecret = __webpack_require__(21);
+  var ReactPropTypesSecret = __webpack_require__(22);
   var loggedTypeFailures = {};
 }
 
@@ -1598,7 +1604,7 @@ module.exports = checkPropTypes;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1617,7 +1623,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 22 */
+/* 23 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1645,7 +1651,7 @@ function warning(message) {
 }
 
 /***/ }),
-/* 23 */
+/* 24 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1682,7 +1688,7 @@ if (process.env.NODE_ENV !== 'production' && typeof isCrushed.name === 'string' 
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(3)))
 
 /***/ }),
-/* 24 */
+/* 25 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1754,7 +1760,7 @@ function isPlainObject(value) {
 
 
 /***/ }),
-/* 25 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1838,7 +1844,7 @@ var locationsAreEqual = exports.locationsAreEqual = function locationsAreEqual(a
 };
 
 /***/ }),
-/* 26 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1929,18 +1935,18 @@ var createTransitionManager = function createTransitionManager() {
 exports.default = createTransitionManager;
 
 /***/ }),
-/* 27 */
+/* 28 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router_es_Router__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router_es_Router__ = __webpack_require__(29);
 // Written in this round about way for babel-transform-imports
 
 
 /* harmony default export */ __webpack_exports__["a"] = (__WEBPACK_IMPORTED_MODULE_0_react_router_es_Router__["a" /* default */]);
 
 /***/ }),
-/* 28 */
+/* 29 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2059,7 +2065,7 @@ Router.childContextTypes = {
 /* harmony default export */ __webpack_exports__["a"] = (Router);
 
 /***/ }),
-/* 29 */
+/* 30 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2136,7 +2142,7 @@ var matchPath = function matchPath(pathname) {
 /* harmony default export */ __webpack_exports__["a"] = (matchPath);
 
 /***/ }),
-/* 30 */
+/* 31 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2219,12 +2225,6 @@ var createTransitionManager = function createTransitionManager() {
 };
 
 /* harmony default export */ __webpack_exports__["a"] = (createTransitionManager);
-
-/***/ }),
-/* 31 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(137);
 
 /***/ }),
 /* 32 */
@@ -3354,7 +3354,7 @@ module.exports = function hoistNonReactStatics(targetComponent, sourceComponent,
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ActionTypes; });
 /* harmony export (immutable) */ __webpack_exports__["b"] = createStore;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash_es_isPlainObject__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash_es_isPlainObject__ = __webpack_require__(25);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_symbol_observable__ = __webpack_require__(99);
 
 
@@ -3797,8 +3797,8 @@ function wrapMapToPropsFunc(mapToProps, methodName) {
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = verifyPlainObject;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash_es_isPlainObject__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__warning__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash_es_isPlainObject__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__warning__ = __webpack_require__(23);
 
 
 
@@ -4125,7 +4125,7 @@ Link.contextTypes = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_prop_types__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_prop_types__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__matchPath__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__matchPath__ = __webpack_require__(30);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -4341,7 +4341,7 @@ exports.types = undefined;
 exports.findUsers = findUsers;
 exports.findErrors = findErrors;
 
-var _axios = __webpack_require__(31);
+var _axios = __webpack_require__(20);
 
 var _axios2 = _interopRequireDefault(_axios);
 
@@ -5257,6 +5257,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 exports.types = undefined;
+exports.findErrors = findErrors;
 exports.errorToggle = errorToggle;
 exports.issueToggle = issueToggle;
 exports.repToggle = repToggle;
@@ -5268,7 +5269,7 @@ exports.updateInstallment = updateInstallment;
 exports.updateNotes = updateNotes;
 exports.addError = addError;
 
-var _axios = __webpack_require__(31);
+var _axios = __webpack_require__(20);
 
 var _axios2 = _interopRequireDefault(_axios);
 
@@ -5278,6 +5279,7 @@ var types = exports.types = {
     ERROR_TOGGLE: 'ERROR_TOGGLE',
     ISSUE_TOGGLE: 'ISSUE_TOGGLE',
     REP_TOGGLE: 'REP_TOGGLE',
+    SET_ID: 'SET_ID',
     MANAGER_TOGGLE: 'MANAGER_TOGGLE',
     UPDATE_DATE: 'UPDATE_DATE',
     UPDATE_ORDER_NUMBER: 'UPDATE_ORDER_NUMBER',
@@ -5287,9 +5289,22 @@ var types = exports.types = {
     DEVICE_ERROR: 'DEVICE_ERROR',
     ACCESSORY_ERROR: 'ACCESSORY_ERROR',
     MISSING_SIGNATURE: 'MISSING_SIGNATURE',
-    TRADE_IN: 'TRADE_IN'
+    TRADE_IN: 'TRADE_IN',
+    ALL_ERRORS: 'ALL_ERRORS',
+    ASSIGN_ID: 'ASSIGN_ID'
 
 };
+
+function findErrors() {
+    return function (dispatch) {
+        _axios2.default.get('http://localhost:3000/api/errors').then(function (res) {
+            dispatch({
+                type: types.ALL_ERRORS,
+                payload: res.data
+            });
+        });
+    };
+}
 
 function errorToggle(value) {
     return {
@@ -5354,44 +5369,31 @@ function updateNotes(value) {
     };
 }
 
-function addError(errorType, issue, employeeName, approvingManager, transactionDate, orderNumber, sku, installmentAgreement, notes) {
-    console.log({ errorType: errorType, issue: issue, employeeName: employeeName, approvingManager: approvingManager, transactionDate: transactionDate, orderNumber: orderNumber, sku: sku, installmentAgreement: installmentAgreement, notes: notes });
+function addError(errorType, issue, employeeId, approvingManager, transactionDate, orderNumber, sku, installmentAgreement, notes) {
     return function (dispatch) {
         if (errorType == 'Device Return') {
-            dispatch({
-                type: types.DEVICE_ERROR,
-                payload: _axios2.default.post('http://localhost:3000/api/errors', { errorType: errorType, issue: issue, employeeName: employeeName, approvingManager: approvingManager, transactionDate: transactionDate, orderNumber: orderNumber, sku: sku, notes: notes }).then(function (results) {
-                    return results.data;alert('Add Successful');
-                }).catch(function (err) {
-                    return console.log(err);
-                })
+            _axios2.default.post('http://localhost:3000/api/errors', { errorType: errorType, issue: issue, employeeId: employeeId, approvingManager: approvingManager, transactionDate: transactionDate, orderNumber: orderNumber, sku: sku, notes: notes }).then(function (res) {
+                dispatch(findErrors());
+            }).catch(function (err) {
+                return console.log('err');
             });
         } else if (errorType == 'Accessory Return') {
-            dispatch({
-                type: types.ACCESSORY_ERROR,
-                payload: _axios2.default.post('http://localhost:3000/api/errors', { errorType: errorType, issue: issue, employeeName: employeeName, transactionDate: transactionDate, orderNumber: orderNumber, sku: sku, notes: notes }).then(function (results) {
-                    return results.data;alert('Add Successful');
-                }).catch(function (err) {
-                    return console.log(err);
-                })
+            _axios2.default.post('http://localhost:3000/api/errors', { errorType: errorType, issue: issue, employeeId: employeeId, transactionDate: transactionDate, orderNumber: orderNumber, sku: sku, notes: notes }).then(function (res) {
+                dispatch(findErrors());
+            }).catch(function (err) {
+                return console.log('err');
             });
         } else if (errorType == 'Missing Signature') {
-            dispatch({
-                type: types.MISSING_SIGNATURE,
-                payload: _axios2.default.post('http://localhost:3000/api/errors', { errorType: errorType, issue: issue, employeeName: employeeName, transactionDate: transactionDate, orderNumber: orderNumber, installmentAgreement: installmentAgreement, notes: notes }).then(function (results) {
-                    return results.data;alert('Add Successful');
-                }).catch(function (err) {
-                    return console.log(err);
-                })
+            _axios2.default.post('http://localhost:3000/api/errors', { errorType: errorType, issue: issue, employeeId: employeeId, transactionDate: transactionDate, orderNumber: orderNumber, installmentAgreement: installmentAgreement, notes: notes }).then(function (res) {
+                dispatch(findErrors());
+            }).catch(function (err) {
+                return console.log('err');
             });
         } else if (errorType == 'Trade-In') {
-            dispatch({
-                type: types.TRADE_IN,
-                payload: _axios2.default.post('http://localhost:3000/api/errors', { errorType: errorType, issue: issue, employeeName: employeeName, transactionDate: transactionDate, orderNumber: orderNumber, sku: sku, notes: notes }).then(function (results) {
-                    return results.data;alert('Add Successful');
-                }).catch(function (err) {
-                    return console.log(err);
-                })
+            _axios2.default.post('http://localhost:3000/api/errors', { errorType: errorType, issue: issue, employeeId: employeeId, transactionDate: transactionDate, orderNumber: orderNumber, sku: sku, notes: notes }).then(function (res) {
+                dispatch(findErrors());
+            }).catch(function (err) {
+                return console.log('err');
             });
         }
     };
@@ -5416,7 +5418,7 @@ exports.updateLastName = updateLastName;
 exports.addEmployee = addEmployee;
 exports.removeEmployee = removeEmployee;
 
-var _axios = __webpack_require__(31);
+var _axios = __webpack_require__(20);
 
 var _axios2 = _interopRequireDefault(_axios);
 
@@ -5473,14 +5475,9 @@ function updateLastName(value) {
 }
 
 function addEmployee(role, employeeId, firstName, lastName) {
-    console.log({ role: role, employeeId: employeeId, firstName: firstName, lastName: lastName });
     return function (dispatch) {
-        _axios2.default.post('http://localhost:3000/api/users', { role: role, employeeId: employeeId, firstName: firstName, lastName: lastName });
-        _axios2.default.get('http://localhost:3000/api/users').then(function (res) {
-            dispatch({
-                type: types.ALL_USERS,
-                payload: res.data
-            });
+        _axios2.default.post('http://localhost:3000/api/users', { role: role, employeeId: employeeId, firstName: firstName, lastName: lastName }).then(function (res) {
+            dispatch(findUsers());
         }).catch(function (err) {
             return console.log(err);
         });
@@ -5489,12 +5486,8 @@ function addEmployee(role, employeeId, firstName, lastName) {
 
 function removeEmployee(id) {
     return function (dispatch) {
-        _axios2.default.delete('http://localhost:3000/api/users/' + id);
-        _axios2.default.get('http://localhost:3000/api/users').then(function (res) {
-            dispatch({
-                type: types.ALL_USERS,
-                payload: res.data
-            });
+        _axios2.default.delete('http://localhost:3000/api/users/' + id).then(function (res) {
+            dispatch(findUsers());
         }).catch(function (err) {
             return console.log(err);
         });
@@ -5520,7 +5513,7 @@ var _appIndex = __webpack_require__(109);
 
 var _appIndex2 = _interopRequireDefault(_appIndex);
 
-var _rootStore = __webpack_require__(200);
+var _rootStore = __webpack_require__(201);
 
 var _rootStore2 = _interopRequireDefault(_rootStore);
 
@@ -5587,7 +5580,7 @@ var emptyObject = __webpack_require__(17);
 var invariant = __webpack_require__(12);
 var warning = __webpack_require__(18);
 var emptyFunction = __webpack_require__(8);
-var checkPropTypes = __webpack_require__(20);
+var checkPropTypes = __webpack_require__(21);
 
 // TODO: this is special because it gets imported during build.
 
@@ -7251,7 +7244,7 @@ var shallowEqual = __webpack_require__(40);
 var containsNode = __webpack_require__(41);
 var focusNode = __webpack_require__(42);
 var emptyObject = __webpack_require__(17);
-var checkPropTypes = __webpack_require__(20);
+var checkPropTypes = __webpack_require__(21);
 var hyphenateStyleName = __webpack_require__(80);
 var camelizeStyleName = __webpack_require__(82);
 
@@ -22786,7 +22779,7 @@ module.exports = camelize;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_prop_types__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_PropTypes__ = __webpack_require__(43);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_warning__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_warning__ = __webpack_require__(23);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -22880,8 +22873,8 @@ var invariant = __webpack_require__(12);
 var warning = __webpack_require__(18);
 var assign = __webpack_require__(11);
 
-var ReactPropTypesSecret = __webpack_require__(21);
-var checkPropTypes = __webpack_require__(20);
+var ReactPropTypesSecret = __webpack_require__(22);
+var checkPropTypes = __webpack_require__(21);
 
 module.exports = function(isValidElement, throwOnDirectAccess) {
   /* global Symbol */
@@ -23427,7 +23420,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
 
 var emptyFunction = __webpack_require__(8);
 var invariant = __webpack_require__(12);
-var ReactPropTypesSecret = __webpack_require__(21);
+var ReactPropTypesSecret = __webpack_require__(22);
 
 module.exports = function() {
   function shim(props, propName, componentName, location, propFullName, secret) {
@@ -23736,7 +23729,7 @@ function shallowEqual(objA, objB) {
 /* unused harmony export whenMapDispatchToPropsIsFunction */
 /* unused harmony export whenMapDispatchToPropsIsMissing */
 /* unused harmony export whenMapDispatchToPropsIsObject */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_redux__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_redux__ = __webpack_require__(24);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__wrapMapToProps__ = __webpack_require__(51);
 
 
@@ -24071,7 +24064,7 @@ function symbolObservablePonyfill(root) {
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {/* harmony export (immutable) */ __webpack_exports__["a"] = combineReducers;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__createStore__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash_es_isPlainObject__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash_es_isPlainObject__ = __webpack_require__(25);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_warning__ = __webpack_require__(49);
 
 
@@ -24513,7 +24506,7 @@ function finalPropsSelectorFactory(dispatch, _ref2) {
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = verifySubselectors;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_warning__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_warning__ = __webpack_require__(23);
 
 
 function verify(selector, methodName, displayName) {
@@ -24662,7 +24655,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Redirect", function() { return __WEBPACK_IMPORTED_MODULE_6__Redirect__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__Route__ = __webpack_require__(57);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Route", function() { return __WEBPACK_IMPORTED_MODULE_7__Route__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__Router__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__Router__ = __webpack_require__(28);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Router", function() { return __WEBPACK_IMPORTED_MODULE_8__Router__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__StaticRouter__ = __webpack_require__(130);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "StaticRouter", function() { return __WEBPACK_IMPORTED_MODULE_9__StaticRouter__["a"]; });
@@ -24712,7 +24705,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_prop_types__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history_createBrowserHistory__ = __webpack_require__(113);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history_createBrowserHistory___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_history_createBrowserHistory__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Router__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Router__ = __webpack_require__(28);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -24787,11 +24780,11 @@ var _invariant = __webpack_require__(5);
 
 var _invariant2 = _interopRequireDefault(_invariant);
 
-var _LocationUtils = __webpack_require__(25);
+var _LocationUtils = __webpack_require__(26);
 
 var _PathUtils = __webpack_require__(14);
 
-var _createTransitionManager = __webpack_require__(26);
+var _createTransitionManager = __webpack_require__(27);
 
 var _createTransitionManager2 = _interopRequireDefault(_createTransitionManager);
 
@@ -25092,7 +25085,7 @@ exports.default = createBrowserHistory;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_prop_types__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history_createHashHistory__ = __webpack_require__(115);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history_createHashHistory___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_history_createHashHistory__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Router__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Router__ = __webpack_require__(28);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -25164,11 +25157,11 @@ var _invariant = __webpack_require__(5);
 
 var _invariant2 = _interopRequireDefault(_invariant);
 
-var _LocationUtils = __webpack_require__(25);
+var _LocationUtils = __webpack_require__(26);
 
 var _PathUtils = __webpack_require__(14);
 
-var _createTransitionManager = __webpack_require__(26);
+var _createTransitionManager = __webpack_require__(27);
 
 var _createTransitionManager2 = _interopRequireDefault(_createTransitionManager);
 
@@ -25499,7 +25492,7 @@ exports.default = createHashHistory;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_prop_types__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history_createMemoryHistory__ = __webpack_require__(118);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history_createMemoryHistory___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_history_createMemoryHistory__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Router__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Router__ = __webpack_require__(29);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -25572,9 +25565,9 @@ var _warning2 = _interopRequireDefault(_warning);
 
 var _PathUtils = __webpack_require__(14);
 
-var _LocationUtils = __webpack_require__(25);
+var _LocationUtils = __webpack_require__(26);
 
-var _createTransitionManager = __webpack_require__(26);
+var _createTransitionManager = __webpack_require__(27);
 
 var _createTransitionManager2 = _interopRequireDefault(_createTransitionManager);
 
@@ -26510,7 +26503,7 @@ Redirect.contextTypes = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_invariant__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__LocationUtils__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__PathUtils__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__createTransitionManager__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__createTransitionManager__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__DOMUtils__ = __webpack_require__(59);
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
@@ -26814,7 +26807,7 @@ var createBrowserHistory = function createBrowserHistory() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_invariant__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__LocationUtils__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__PathUtils__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__createTransitionManager__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__createTransitionManager__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__DOMUtils__ = __webpack_require__(59);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -27133,7 +27126,7 @@ var createHashHistory = function createHashHistory() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_warning___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_warning__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__PathUtils__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__LocationUtils__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__createTransitionManager__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__createTransitionManager__ = __webpack_require__(31);
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
@@ -27318,7 +27311,7 @@ var createMemoryHistory = function createMemoryHistory() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_prop_types__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_history_PathUtils__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_history_PathUtils___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_history_PathUtils__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Router__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Router__ = __webpack_require__(29);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
@@ -27510,7 +27503,7 @@ StaticRouter.childContextTypes = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_warning___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_warning__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_invariant__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_invariant__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__matchPath__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__matchPath__ = __webpack_require__(30);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -27596,7 +27589,7 @@ Switch.propTypes = {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router_es_matchPath__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router_es_matchPath__ = __webpack_require__(30);
 // Written in this round about way for babel-transform-imports
 
 
@@ -28566,7 +28559,7 @@ function mapStoreToProps(store) {
         users: store.app.users,
         errorType: store.addError.errorType,
         issue: store.addError.issue,
-        employeeName: store.addError.employeeName,
+        employeeId: store.addError.employeeId,
         approvingManager: store.addError.approvingManager,
         transactionDate: store.addError.transactionDate,
         orderNumber: store.addError.orderNumber,
@@ -28647,6 +28640,7 @@ var AddError = function (_Component) {
             var dispatch = this.props.dispatch;
             var value = e.target.value;
 
+            console.log(value);
             dispatch((0, _addErrorActions.repToggle)(value));
         }
     }, {
@@ -28708,12 +28702,12 @@ var AddError = function (_Component) {
     }, {
         key: 'handleClick',
         value: function handleClick(e) {
-            e.preventDefault();
+            // e.preventDefault();
             var _props = this.props,
                 dispatch = _props.dispatch,
                 errorType = _props.errorType,
                 issue = _props.issue,
-                employeeName = _props.employeeName,
+                employeeId = _props.employeeId,
                 approvingManager = _props.approvingManager,
                 transactionDate = _props.transactionDate,
                 orderNumber = _props.orderNumber,
@@ -28721,7 +28715,7 @@ var AddError = function (_Component) {
                 installmentAgreement = _props.installmentAgreement,
                 notes = _props.notes;
 
-            dispatch((0, _addErrorActions.addError)(errorType, issue, employeeName, approvingManager, transactionDate, orderNumber, sku, installmentAgreement, notes));
+            dispatch((0, _addErrorActions.addError)(errorType, issue, employeeId, approvingManager, transactionDate, orderNumber, sku, installmentAgreement, notes));
         }
     }, {
         key: 'render',
@@ -28730,6 +28724,7 @@ var AddError = function (_Component) {
                 errorType = _props2.errorType,
                 users = _props2.users;
 
+            console.log(users);
 
             if (errorType == 'Device Return') {
                 return _react2.default.createElement(
@@ -28828,7 +28823,7 @@ var AddError = function (_Component) {
                                                     users.map(function (user) {
                                                         return _react2.default.createElement(
                                                             'option',
-                                                            { key: user.id, value: user.firstName + ' ' + user.lastName },
+                                                            { key: user.id, name: user.firstName + ' ' + user.lastName, value: user.employeeId },
                                                             user.firstName,
                                                             ' ',
                                                             user.lastName
@@ -28904,10 +28899,10 @@ var AddError = function (_Component) {
                                                 { className: 'card-action center' },
                                                 _react2.default.createElement(
                                                     'a',
-                                                    { href: '#/' },
+                                                    { href: '/' },
                                                     _react2.default.createElement(
                                                         'button',
-                                                        { className: 'btn red ' },
+                                                        { type: 'submit', className: 'btn red ' },
                                                         'Submit'
                                                     )
                                                 )
@@ -29001,7 +28996,7 @@ var AddError = function (_Component) {
                                                     users.map(function (user) {
                                                         return _react2.default.createElement(
                                                             'option',
-                                                            { key: user.id, value: user.firstName + ' ' + user.lastName },
+                                                            { key: user.id, name: user.firstName + ' ' + user.lastName, value: user.employeeId },
                                                             user.firstName,
                                                             ' ',
                                                             user.lastName
@@ -29056,7 +29051,7 @@ var AddError = function (_Component) {
                                                 { className: 'card-action center' },
                                                 _react2.default.createElement(
                                                     'a',
-                                                    { href: '#/' },
+                                                    { href: '/' },
                                                     _react2.default.createElement(
                                                         'button',
                                                         { className: 'btn red ' },
@@ -29143,7 +29138,7 @@ var AddError = function (_Component) {
                                                     users.map(function (user) {
                                                         return _react2.default.createElement(
                                                             'option',
-                                                            { key: user.id, value: user.firstName + ' ' + user.lastName },
+                                                            { key: user.id, name: user.firstName + ' ' + user.lastName, value: user.employeeId },
                                                             user.firstName,
                                                             ' ',
                                                             user.lastName
@@ -29198,7 +29193,7 @@ var AddError = function (_Component) {
                                                 { className: 'card-action center' },
                                                 _react2.default.createElement(
                                                     'a',
-                                                    { href: '#/' },
+                                                    { href: '/' },
                                                     _react2.default.createElement(
                                                         'button',
                                                         { className: 'btn red ' },
@@ -29290,7 +29285,7 @@ var AddError = function (_Component) {
                                                     users.map(function (user) {
                                                         return _react2.default.createElement(
                                                             'option',
-                                                            { key: user.id, value: user.firstName + ' ' + user.lastName },
+                                                            { key: user.id, name: user.firstName + ' ' + user.lastName, value: user.employeeId },
                                                             user.firstName,
                                                             ' ',
                                                             user.lastName
@@ -29345,7 +29340,7 @@ var AddError = function (_Component) {
                                                 { className: 'card-action center' },
                                                 _react2.default.createElement(
                                                     'a',
-                                                    { href: '#/' },
+                                                    { href: '/' },
                                                     _react2.default.createElement(
                                                         'button',
                                                         { className: 'btn red ' },
@@ -33910,7 +33905,6 @@ var Admin = function (_Component) {
                 lastName = _props2.lastName,
                 users = _props2.users;
 
-            console.log(role);
             return _react2.default.createElement(
                 'div',
                 null,
@@ -34175,6 +34169,8 @@ var _navbarIndex = __webpack_require__(35);
 
 var _navbarIndex2 = _interopRequireDefault(_navbarIndex);
 
+var _detailsAction = __webpack_require__(200);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -34189,12 +34185,34 @@ var Details = function (_Component) {
     function Details(props) {
         _classCallCheck(this, Details);
 
-        return _possibleConstructorReturn(this, (Details.__proto__ || Object.getPrototypeOf(Details)).call(this, props));
+        var _this = _possibleConstructorReturn(this, (Details.__proto__ || Object.getPrototypeOf(Details)).call(this, props));
+
+        _this.handleClick = _this.handleClick.bind(_this);
+        _this.handleRepErrorDelete = _this.handleRepErrorDelete.bind(_this);
+        return _this;
     }
 
     _createClass(Details, [{
+        key: 'handleRepErrorDelete',
+        value: function handleRepErrorDelete(e) {
+            var dispatch = this.props.dispatch;
+            var id = e.target.id;
+
+            dispatch((0, _detailsAction.removedFiltered)(id));
+        }
+    }, {
+        key: 'handleClick',
+        value: function handleClick(e) {
+            var dispatch = this.props.dispatch;
+            var id = e.target.id;
+
+            dispatch((0, _detailsAction.removeItem)(id));
+        }
+    }, {
         key: 'render',
         value: function render() {
+            var _this2 = this;
+
             var _props = this.props,
                 errors = _props.errors,
                 users = _props.users;
@@ -34272,11 +34290,28 @@ var Details = function (_Component) {
                                                         ),
                                                         _react2.default.createElement(
                                                             'div',
-                                                            { className: 'card-action center' },
+                                                            { className: 'card-action center', style: { paddingBottom: '1px' } },
                                                             _react2.default.createElement(
-                                                                'button',
-                                                                { className: 'btn red' },
-                                                                'Filter'
+                                                                'div',
+                                                                { className: 'row' },
+                                                                _react2.default.createElement(
+                                                                    'div',
+                                                                    { className: 'col s5' },
+                                                                    _react2.default.createElement(
+                                                                        'button',
+                                                                        { className: 'btn red' },
+                                                                        'Filter'
+                                                                    )
+                                                                ),
+                                                                _react2.default.createElement(
+                                                                    'div',
+                                                                    { className: 'col s5 offset-s1' },
+                                                                    _react2.default.createElement(
+                                                                        'button',
+                                                                        { onClick: _this2.handleRepErrorDelete, id: user.employeeId, className: 'btn red' },
+                                                                        'Delete'
+                                                                    )
+                                                                )
                                                             )
                                                         )
                                                     )
@@ -34326,6 +34361,17 @@ var Details = function (_Component) {
                                                                 _react2.default.createElement(
                                                                     'b',
                                                                     null,
+                                                                    'Rep:'
+                                                                ),
+                                                                ' ',
+                                                                error.employeeId
+                                                            ),
+                                                            _react2.default.createElement(
+                                                                'p',
+                                                                null,
+                                                                _react2.default.createElement(
+                                                                    'b',
+                                                                    null,
                                                                     'Error Type:'
                                                                 ),
                                                                 ' ',
@@ -34363,17 +34409,6 @@ var Details = function (_Component) {
                                                                 ),
                                                                 ' ',
                                                                 error.sku
-                                                            ),
-                                                            _react2.default.createElement(
-                                                                'p',
-                                                                null,
-                                                                _react2.default.createElement(
-                                                                    'b',
-                                                                    null,
-                                                                    'Rep:'
-                                                                ),
-                                                                ' ',
-                                                                error.employeeName
                                                             ),
                                                             _react2.default.createElement(
                                                                 'p',
@@ -34414,7 +34449,7 @@ var Details = function (_Component) {
                                                             { className: 'card-action center' },
                                                             _react2.default.createElement(
                                                                 'button',
-                                                                { className: 'btn red' },
+                                                                { id: error.id, onClick: _this2.handleClick, className: 'btn red' },
                                                                 'Delete'
                                                             )
                                                         )
@@ -34437,6 +34472,17 @@ var Details = function (_Component) {
                                                         _react2.default.createElement(
                                                             'div',
                                                             null,
+                                                            _react2.default.createElement(
+                                                                'p',
+                                                                null,
+                                                                _react2.default.createElement(
+                                                                    'b',
+                                                                    null,
+                                                                    'Rep:'
+                                                                ),
+                                                                ' ',
+                                                                error.employeeId
+                                                            ),
                                                             _react2.default.createElement(
                                                                 'p',
                                                                 null,
@@ -34487,17 +34533,6 @@ var Details = function (_Component) {
                                                                 _react2.default.createElement(
                                                                     'b',
                                                                     null,
-                                                                    'Rep:'
-                                                                ),
-                                                                ' ',
-                                                                error.employeeName
-                                                            ),
-                                                            _react2.default.createElement(
-                                                                'p',
-                                                                null,
-                                                                _react2.default.createElement(
-                                                                    'b',
-                                                                    null,
                                                                     'Issue:'
                                                                 ),
                                                                 ' ',
@@ -34520,7 +34555,7 @@ var Details = function (_Component) {
                                                             { className: 'card-action center' },
                                                             _react2.default.createElement(
                                                                 'button',
-                                                                { className: 'btn red' },
+                                                                { id: error.id, onClick: _this2.handleClick, className: 'btn red' },
                                                                 'Delete'
                                                             )
                                                         )
@@ -34543,6 +34578,17 @@ var Details = function (_Component) {
                                                         _react2.default.createElement(
                                                             'div',
                                                             null,
+                                                            _react2.default.createElement(
+                                                                'p',
+                                                                null,
+                                                                _react2.default.createElement(
+                                                                    'b',
+                                                                    null,
+                                                                    'Rep:'
+                                                                ),
+                                                                ' ',
+                                                                error.employeeId
+                                                            ),
                                                             _react2.default.createElement(
                                                                 'p',
                                                                 null,
@@ -34593,17 +34639,6 @@ var Details = function (_Component) {
                                                                 _react2.default.createElement(
                                                                     'b',
                                                                     null,
-                                                                    'Rep:'
-                                                                ),
-                                                                ' ',
-                                                                error.employeeName
-                                                            ),
-                                                            _react2.default.createElement(
-                                                                'p',
-                                                                null,
-                                                                _react2.default.createElement(
-                                                                    'b',
-                                                                    null,
                                                                     'Issue:'
                                                                 ),
                                                                 ' ',
@@ -34626,7 +34661,7 @@ var Details = function (_Component) {
                                                             { className: 'card-action center' },
                                                             _react2.default.createElement(
                                                                 'button',
-                                                                { className: 'btn red' },
+                                                                { id: error.id, onClick: _this2.handleClick, className: 'btn red' },
                                                                 'Delete'
                                                             )
                                                         )
@@ -34649,6 +34684,17 @@ var Details = function (_Component) {
                                                         _react2.default.createElement(
                                                             'div',
                                                             null,
+                                                            _react2.default.createElement(
+                                                                'p',
+                                                                null,
+                                                                _react2.default.createElement(
+                                                                    'b',
+                                                                    null,
+                                                                    'Rep:'
+                                                                ),
+                                                                ' ',
+                                                                error.employeeId
+                                                            ),
                                                             _react2.default.createElement(
                                                                 'p',
                                                                 null,
@@ -34699,17 +34745,6 @@ var Details = function (_Component) {
                                                                 _react2.default.createElement(
                                                                     'b',
                                                                     null,
-                                                                    'Rep:'
-                                                                ),
-                                                                ' ',
-                                                                error.employeeName
-                                                            ),
-                                                            _react2.default.createElement(
-                                                                'p',
-                                                                null,
-                                                                _react2.default.createElement(
-                                                                    'b',
-                                                                    null,
                                                                     'Issue:'
                                                                 ),
                                                                 ' ',
@@ -34732,7 +34767,7 @@ var Details = function (_Component) {
                                                             { className: 'card-action center' },
                                                             _react2.default.createElement(
                                                                 'button',
-                                                                { className: 'btn red' },
+                                                                { id: error.id, onClick: _this2.handleClick, className: 'btn red' },
                                                                 'Delete'
                                                             )
                                                         )
@@ -34765,14 +34800,78 @@ exports.default = Details;
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+exports.types = undefined;
+exports.removedFiltered = removedFiltered;
+exports.findErrors = findErrors;
+exports.removeItem = removeItem;
 
-var _redux = __webpack_require__(23);
+var _axios = __webpack_require__(20);
 
-var _reduxThunk = __webpack_require__(201);
+var _axios2 = _interopRequireDefault(_axios);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var types = exports.types = {
+    ALL_ERRORS: 'ALL_ERRORS'
+};
+
+function removedFiltered(id) {
+    var count = 0;
+    return function (dispatch) {
+        _axios2.default.get('http://localhost:3000/api/errors').then(function (res) {
+            res.data.filter(function (errors) {
+                return errors.employeeId === id;
+            }).map(function (errorDelete) {
+                count++;
+                _axios2.default.delete('http://localhost:3000/api/errors/' + errorDelete.id);
+            });
+        }).then(function (res) {
+            dispatch(findErrors());
+        }).catch(function (err) {
+            return console.log('err');
+        });
+    };
+}
+
+function findErrors() {
+    return function (dispatch) {
+        _axios2.default.get('http://localhost:3000/api/errors').then(function (res) {
+            dispatch({
+                type: types.ALL_ERRORS,
+                payload: res.data
+            });
+        });
+    };
+}
+
+function removeItem(id) {
+    return function (dispatch) {
+        _axios2.default.delete('http://localhost:3000/api/errors/' + id).then(function (res) {
+            dispatch(findErrors());
+        }).catch(function (err) {
+            return console.log('err');
+        });
+    };
+}
+
+/***/ }),
+/* 201 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _redux = __webpack_require__(24);
+
+var _reduxThunk = __webpack_require__(202);
 
 var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 
-var _rootReducer = __webpack_require__(202);
+var _rootReducer = __webpack_require__(203);
 
 var _rootReducer2 = _interopRequireDefault(_rootReducer);
 
@@ -34783,7 +34882,7 @@ var rootStore = (0, _redux.createStore)(_rootReducer2.default, (0, _redux.compos
 exports.default = rootStore;
 
 /***/ }),
-/* 201 */
+/* 202 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34812,7 +34911,7 @@ thunk.withExtraArgument = createThunkMiddleware;
 exports['default'] = thunk;
 
 /***/ }),
-/* 202 */
+/* 203 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34822,17 +34921,17 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _redux = __webpack_require__(23);
+var _redux = __webpack_require__(24);
 
-var _appReducer = __webpack_require__(203);
+var _appReducer = __webpack_require__(204);
 
 var _appReducer2 = _interopRequireDefault(_appReducer);
 
-var _addErrorReducer = __webpack_require__(204);
+var _addErrorReducer = __webpack_require__(205);
 
 var _addErrorReducer2 = _interopRequireDefault(_addErrorReducer);
 
-var _adminReducer = __webpack_require__(205);
+var _adminReducer = __webpack_require__(206);
 
 var _adminReducer2 = _interopRequireDefault(_adminReducer);
 
@@ -34847,7 +34946,7 @@ var rootReducer = (0, _redux.combineReducers)({
 exports.default = rootReducer;
 
 /***/ }),
-/* 203 */
+/* 204 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34897,7 +34996,7 @@ function AppReducer() {
 };
 
 /***/ }),
-/* 204 */
+/* 205 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34918,11 +35017,11 @@ var INITIAL_STATE = {
     approvingManager: '',
     transactionDate: '',
     orderNumber: '',
-    employeeName: '',
     issue: '',
     sku: '',
     installmentAgreement: '',
-    notes: ''
+    notes: '',
+    employeeId: ''
 
 };
 
@@ -34952,7 +35051,7 @@ function AddErrorReducer() {
         case _addErrorActions.types.REP_TOGGLE:
             {
                 return _extends({}, state, {
-                    employeeName: payload
+                    employeeId: payload
                 });
                 break;
             }
@@ -35010,7 +35109,7 @@ function AddErrorReducer() {
                 return _extends({}, state, {
                     errorType: payload.errorType,
                     issue: payload.issue,
-                    employeeName: payload.employeeName,
+                    employeeId: payload.employeeId,
                     approvingManager: payload.approvingManager,
                     transactionDate: payload.transactionDate,
                     orderNumber: payload.orderNumber,
@@ -35025,7 +35124,7 @@ function AddErrorReducer() {
                 return _extends({}, state, {
                     errorType: payload.errorType,
                     issue: payload.issue,
-                    employeeName: payload.employeeName,
+                    employeeId: payload.employeeId,
                     transactionDate: payload.transactionDate,
                     orderNumber: payload.orderNumber,
                     sku: payload.sku,
@@ -35039,7 +35138,7 @@ function AddErrorReducer() {
                 return _extends({}, state, {
                     errorType: payload.errorType,
                     issue: payload.issue,
-                    employeeName: payload.employeeName,
+                    employeeId: payload.employeeId,
                     transactionDate: payload.transactionDate,
                     orderNumber: payload.orderNumber,
                     installmentAgreement: payload.installmentAgreement,
@@ -35053,7 +35152,7 @@ function AddErrorReducer() {
                 return _extends({}, state, {
                     errorType: payload.errorType,
                     issue: payload.issue,
-                    employeeName: payload.employeeName,
+                    employeeId: payload.employeeId,
                     transactionDate: payload.transactionDate,
                     orderNumber: payload.orderNumber,
                     sku: payload.sku,
@@ -35070,7 +35169,7 @@ function AddErrorReducer() {
 };
 
 /***/ }),
-/* 205 */
+/* 206 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

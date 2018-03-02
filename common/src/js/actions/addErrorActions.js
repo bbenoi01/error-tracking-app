@@ -4,6 +4,7 @@ export const types = {
     ERROR_TOGGLE: 'ERROR_TOGGLE',
     ISSUE_TOGGLE: 'ISSUE_TOGGLE',
     REP_TOGGLE: 'REP_TOGGLE',
+    SET_ID: 'SET_ID',
     MANAGER_TOGGLE: 'MANAGER_TOGGLE',
     UPDATE_DATE: 'UPDATE_DATE',
     UPDATE_ORDER_NUMBER: 'UPDATE_ORDER_NUMBER',
@@ -13,8 +14,22 @@ export const types = {
     DEVICE_ERROR: 'DEVICE_ERROR',
     ACCESSORY_ERROR: 'ACCESSORY_ERROR',
     MISSING_SIGNATURE: 'MISSING_SIGNATURE',
-    TRADE_IN: 'TRADE_IN'
+    TRADE_IN: 'TRADE_IN',
+    ALL_ERRORS: 'ALL_ERRORS',
+    ASSIGN_ID: 'ASSIGN_ID'
 
+}
+
+export function findErrors() {
+    return (dispatch) => {
+        axios.get('http://localhost:3000/api/errors')
+        .then(res => {
+            dispatch({
+                type: types.ALL_ERRORS,
+                payload: res.data
+            })
+        })
+    };
 }
 
 export function errorToggle(value) {
@@ -80,37 +95,32 @@ export function updateNotes(value) {
     };
 }
 
-export function addError(errorType, issue, employeeName, approvingManager, transactionDate, orderNumber, sku, installmentAgreement, notes) {
-    console.log({errorType, issue, employeeName, approvingManager, transactionDate, orderNumber, sku, installmentAgreement, notes});
+export function addError(errorType, issue, employeeId, approvingManager, transactionDate, orderNumber, sku, installmentAgreement, notes) {
     return (dispatch) => {
         if (errorType == 'Device Return') {
-            dispatch({
-                type: types.DEVICE_ERROR,
-                payload: axios.post('http://localhost:3000/api/errors', { errorType, issue, employeeName, approvingManager, transactionDate, orderNumber, sku, notes })
-                .then(results => { return results.data; alert('Add Successful') })
-                .catch(err => console.log(err))
+            axios.post('http://localhost:3000/api/errors', { errorType, issue, employeeId, approvingManager, transactionDate, orderNumber, sku, notes })
+            .then(res => {
+                dispatch(findErrors())
             })
+            .catch(err => console.log('err'))
         } else if (errorType == 'Accessory Return') {
-            dispatch({
-                type: types.ACCESSORY_ERROR,
-                payload: axios.post('http://localhost:3000/api/errors', { errorType, issue, employeeName, transactionDate, orderNumber, sku, notes })
-                .then(results => { return results.data; alert('Add Successful') })
-                .catch(err => console.log(err))
+            axios.post('http://localhost:3000/api/errors', { errorType, issue, employeeId, transactionDate, orderNumber, sku, notes })
+            .then(res => {
+                dispatch(findErrors())
             })
+            .catch(err => console.log('err'))
         } else if (errorType == 'Missing Signature') {
-            dispatch({
-                type: types.MISSING_SIGNATURE,
-                payload: axios.post('http://localhost:3000/api/errors', { errorType, issue, employeeName, transactionDate, orderNumber, installmentAgreement, notes })
-                .then(results => { return results.data; alert('Add Successful') })
-                .catch(err => console.log(err))
+            axios.post('http://localhost:3000/api/errors', { errorType, issue, employeeId, transactionDate, orderNumber, installmentAgreement, notes })
+            .then(res => {
+                dispatch(findErrors())
             })
+            .catch(err => console.log('err'))
         } else if (errorType == 'Trade-In') {
-            dispatch({
-                type: types.TRADE_IN,
-                payload: axios.post('http://localhost:3000/api/errors', { errorType, issue, employeeName, transactionDate, orderNumber, sku, notes })
-                .then(results => { return results.data; alert('Add Successful') })
-                .catch(err => console.log(err))
+            axios.post('http://localhost:3000/api/errors', { errorType, issue, employeeId, transactionDate, orderNumber, sku, notes })
+            .then(res => {
+                dispatch(findErrors())
             })
+            .catch(err => console.log('err'))
         }
     }
 }

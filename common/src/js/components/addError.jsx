@@ -40,6 +40,7 @@ export default class AddError extends Component {
     handleRepToggle(e) {
         const { dispatch } = this.props;
         const { value } = e.target;
+        console.log(value);
         dispatch(repToggle(value));
     }
 
@@ -86,13 +87,14 @@ export default class AddError extends Component {
     }
 
     handleClick(e) {
-        e.preventDefault();
-        const { dispatch, errorType, issue, employeeName, approvingManager, transactionDate, orderNumber, sku, installmentAgreement, notes } = this.props;
-        dispatch(addError(errorType, issue, employeeName, approvingManager, transactionDate, orderNumber, sku, installmentAgreement, notes));
+        // e.preventDefault();
+        const { dispatch, errorType, issue, employeeId, approvingManager, transactionDate, orderNumber, sku, installmentAgreement, notes } = this.props;
+        dispatch(addError(errorType, issue, employeeId, approvingManager, transactionDate, orderNumber, sku, installmentAgreement, notes));
     }
 
     render() {
         const { errorType, users } = this.props;
+        console.log(users);
 
          if (errorType == 'Device Return') {
             return (
@@ -122,7 +124,7 @@ export default class AddError extends Component {
                                                 <Input s={12} type='select' onChange={this.handleRepToggle} required>
                                                     <option value="" disabled selected>Rep</option>
                                                     {users.map(user =>
-                                                        <option key={user.id} value={user.firstName + ' ' + user.lastName}>{user.firstName} {user.lastName}</option>
+                                                        <option key={user.id} name={user.firstName + ' ' + user.lastName} value={user.employeeId}>{user.firstName} {user.lastName}</option>
                                                     )}
                                                 </Input>
                                                 <br/>
@@ -152,7 +154,7 @@ export default class AddError extends Component {
                                                 <br/>
                                             </div>
                                             <div className="card-action center">
-                                                <a href="#/"><button className="btn red ">Submit</button></a>
+                                                <a href="/"><button type='submit' className="btn red ">Submit</button></a>
                                             </div>
                                         </form>
                                     </div>
@@ -187,7 +189,7 @@ export default class AddError extends Component {
                                                 <Input s={12} type='select' onChange={this.handleRepToggle} required>
                                                     <option value="" disabled selected>Rep</option>
                                                     {users.map(user =>
-                                                        <option key={user.id} value={user.firstName + ' ' + user.lastName}>{user.firstName} {user.lastName}</option>
+                                                        <option key={user.id} name={user.firstName + ' ' + user.lastName} value={user.employeeId}>{user.firstName} {user.lastName}</option>
                                                     )}
                                                 </Input>
                                                 <br/>
@@ -210,7 +212,7 @@ export default class AddError extends Component {
                                                 <br/>
                                             </div>
                                             <div className="card-action center">
-                                                <a href="#/"><button className="btn red ">Submit</button></a>
+                                                <a href="/"><button className="btn red ">Submit</button></a>
                                             </div>
                                         </form>
                                     </div>
@@ -243,7 +245,7 @@ export default class AddError extends Component {
                                                 <Input s={12} type='select' onChange={this.handleRepToggle} required>
                                                     <option value="" disabled selected>Rep</option>
                                                     {users.map(user =>
-                                                        <option key={user.id} value={user.firstName + ' ' + user.lastName}>{user.firstName} {user.lastName}</option>
+                                                        <option key={user.id} name={user.firstName + ' ' + user.lastName} value={user.employeeId}>{user.firstName} {user.lastName}</option>
                                                     )}
                                                 </Input>
                                                 <br/>
@@ -266,7 +268,7 @@ export default class AddError extends Component {
                                                 <br/>
                                             </div>
                                             <div className="card-action center">
-                                                <a href="#/"><button className="btn red ">Submit</button></a>
+                                                <a href="/"><button className="btn red ">Submit</button></a>
                                             </div>
                                         </form>
                                     </div>
@@ -300,7 +302,7 @@ export default class AddError extends Component {
                                                 <Input s={12} type='select' onChange={this.handleRepToggle} required>
                                                     <option value="" disabled selected>Rep</option>
                                                     {users.map(user =>
-                                                        <option key={user.id} value={user.firstName + ' ' + user.lastName}>{user.firstName} {user.lastName}</option>
+                                                        <option key={user.id} name={user.firstName + ' ' + user.lastName} value={user.employeeId}>{user.firstName} {user.lastName}</option>
                                                     )}
                                                 </Input>
                                                 <br/>
@@ -323,7 +325,7 @@ export default class AddError extends Component {
                                                 <br/>
                                             </div>
                                             <div className="card-action center">
-                                                <a href="#/"><button className="btn red ">Submit</button></a>
+                                                <a href="/"><button className="btn red ">Submit</button></a>
                                             </div>
                                         </form>
                                     </div>

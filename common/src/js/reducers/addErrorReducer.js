@@ -5,11 +5,11 @@ const INITIAL_STATE = {
     approvingManager: '',
     transactionDate: '',
     orderNumber: '',
-    employeeName: '',
     issue: '',
     sku: '',
     installmentAgreement: '',
-    notes: ''
+    notes: '',
+    employeeId: ''
 
 };
 
@@ -35,7 +35,7 @@ export default function AddErrorReducer(state = INITIAL_STATE, action) {
         case (types.REP_TOGGLE): {
             return {
                 ...state,
-                employeeName: payload
+                employeeId: payload
             }
             break;
         }
@@ -93,7 +93,7 @@ export default function AddErrorReducer(state = INITIAL_STATE, action) {
                 ...state,
                 errorType: payload.errorType,
                 issue: payload.issue,
-                employeeName: payload.employeeName,
+                employeeId: payload.employeeId,
                 approvingManager: payload.approvingManager,
                 transactionDate: payload.transactionDate,
                 orderNumber: payload.orderNumber,
@@ -108,7 +108,7 @@ export default function AddErrorReducer(state = INITIAL_STATE, action) {
                 ...state,
                 errorType: payload.errorType,
                 issue: payload.issue,
-                employeeName: payload.employeeName,
+                employeeId: payload.employeeId,
                 transactionDate: payload.transactionDate,
                 orderNumber: payload.orderNumber,
                 sku: payload.sku,
@@ -122,7 +122,7 @@ export default function AddErrorReducer(state = INITIAL_STATE, action) {
                 ...state,
                 errorType:payload.errorType,
                 issue: payload.issue,
-                employeeName: payload.employeeName,
+                employeeId: payload.employeeId,
                 transactionDate: payload.transactionDate,
                 orderNumber: payload.orderNumber,
                 installmentAgreement: payload.installmentAgreement,
@@ -136,7 +136,7 @@ export default function AddErrorReducer(state = INITIAL_STATE, action) {
                 ...state,
                 errorType: payload.errorType,
                 issue: payload.issue,
-                employeeName: payload.employeeName,
+                employeeId: payload.employeeId,
                 transactionDate: payload.transactionDate,
                 orderNumber: payload.orderNumber,
                 sku: payload.sku,

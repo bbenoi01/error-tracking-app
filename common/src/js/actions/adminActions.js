@@ -51,15 +51,10 @@ export function updateLastName(value) {
 }
 
 export function addEmployee(role, employeeId, firstName, lastName) {
-    console.log({role, employeeId, firstName, lastName});
     return (dispatch) => {
-        axios.post('http://localhost:3000/api/users', { role, employeeId, firstName, lastName });
-        axios.get('http://localhost:3000/api/users')
+        axios.post('http://localhost:3000/api/users', { role, employeeId, firstName, lastName })
         .then(res => {
-            dispatch({
-                type: types.ALL_USERS,
-                payload: res.data
-            })      
+            dispatch(findUsers())
         })
         .catch(err => console.log(err))     
     }
@@ -67,13 +62,9 @@ export function addEmployee(role, employeeId, firstName, lastName) {
 
 export function removeEmployee(id) {
     return (dispatch) => {
-        axios.delete(`http://localhost:3000/api/users/${id}`);
-        axios.get('http://localhost:3000/api/users')
+        axios.delete(`http://localhost:3000/api/users/${id}`)
         .then(res => {
-            dispatch({
-                type: types.ALL_USERS,
-                payload: res.data
-            })      
+            dispatch(findUsers())
         })
         .catch(err => console.log(err))
     }
