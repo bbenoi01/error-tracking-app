@@ -63,7 +63,6 @@ export default class Admin extends Component {
 
     render() {
         const { role, employeeId, firstName, lastName, users } = this.props;
-        console.log(role);
         return (
             <div>
                 <Navbar />

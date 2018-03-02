@@ -6,7 +6,7 @@ function mapStoreToProps(store) {
         users: store.app.users,
         errorType: store.addError.errorType,
         issue: store.addError.issue,
-        employeeName: store.addError.employeeName,
+        employeeId: store.addError.employeeId,
         approvingManager: store.addError.approvingManager,
         transactionDate: store.addError.transactionDate,
         orderNumber: store.addError.orderNumber,
