@@ -55,10 +55,8 @@ export default class Admin extends Component {
     }
 
     handleClick(e) {
-        e.preventDefault();
         const { dispatch, role, employeeId, firstName, lastName } = this.props;
         dispatch(addEmployee(role, employeeId, firstName, lastName));
-        document.getElementById('admin-form').reset();
     }
 
     render() {
