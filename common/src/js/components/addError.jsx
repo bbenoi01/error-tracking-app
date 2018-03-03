@@ -86,7 +86,6 @@ export default class AddError extends Component {
     }
 
     handleClick(e) {
-        // e.preventDefault();
         const { dispatch, errorType, issue, employeeId, approvingManager, transactionDate, orderNumber, sku, installmentAgreement, notes } = this.props;
         dispatch(addError(errorType, issue, employeeId, approvingManager, transactionDate, orderNumber, sku, installmentAgreement, notes));
     }
