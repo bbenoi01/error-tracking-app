@@ -8,8 +8,6 @@ body,
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  display: flex;
-  flex-direction: column;
 }
 nav {
   background-color: #d52b1e;
