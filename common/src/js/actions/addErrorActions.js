@@ -22,7 +22,7 @@ export const types = {
 
 export function findErrors() {
     return (dispatch) => {
-        axios.get('http://localhost:3000/api/errors')
+        axios.get('https://bb-error-tracker.herokuapp.com/api/errors')
         .then(res => {
             dispatch({
                 type: types.ALL_ERRORS,
@@ -98,25 +98,25 @@ export function updateNotes(value) {
 export function addError(errorType, issue, employeeId, approvingManager, transactionDate, orderNumber, sku, installmentAgreement, notes) {
     return (dispatch) => {
         if (errorType == 'Device Return') {
-            axios.post('http://localhost:3000/api/errors', { errorType, issue, employeeId, approvingManager, transactionDate, orderNumber, sku, notes })
+            axios.post('https://bb-error-tracker.herokuapp.com/api/errors', { errorType, issue, employeeId, approvingManager, transactionDate, orderNumber, sku, notes })
             .then(res => {
                 dispatch(findErrors())
             })
             .catch(err => console.log('Error not logged'))
         } else if (errorType == 'Accessory Return') {
-            axios.post('http://localhost:3000/api/errors', { errorType, issue, employeeId, transactionDate, orderNumber, sku, notes })
+            axios.post('https://bb-error-tracker.herokuapp.com/api/errors', { errorType, issue, employeeId, transactionDate, orderNumber, sku, notes })
             .then(res => {
                 dispatch(findErrors())
             })
             .catch(err => console.log('Error not logged'))
         } else if (errorType == 'Missing Signature') {
-            axios.post('http://localhost:3000/api/errors', { errorType, issue, employeeId, transactionDate, orderNumber, installmentAgreement, notes })
+            axios.post('https://bb-error-tracker.herokuapp.com/api/errors', { errorType, issue, employeeId, transactionDate, orderNumber, installmentAgreement, notes })
             .then(res => {
                 dispatch(findErrors())
             })
             .catch(err => console.log('Error not logged'))
         } else if (errorType == 'Trade-In') {
-            axios.post('http://localhost:3000/api/errors', { errorType, issue, employeeId, transactionDate, orderNumber, sku, notes })
+            axios.post('https://bb-error-tracker.herokuapp.com/api/errors', { errorType, issue, employeeId, transactionDate, orderNumber, sku, notes })
             .then(res => {
                 dispatch(findErrors())
             })

@@ -7,7 +7,7 @@ export const types = {
 
 export function findUsers() {
     return (dispatch) => {
-        axios.get('http://localhost:3000/api/users')
+        axios.get('https://bb-error-tracker.herokuapp.com/api/users')
         .then(res => {
             dispatch({
                 type: types.ALL_USERS,
@@ -20,7 +20,7 @@ export function findUsers() {
 
 export function findErrors() {
     return (dispatch) => {
-        axios.get('http://localhost:3000/api/errors')
+        axios.get('https://bb-error-tracker.herokuapp.com/api/errors')
         .then(res => {
             dispatch({
                 type: types.ALL_ERRORS,
